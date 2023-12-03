@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DefaultNamespace.Runtime;
 using UnityEngine;
 
 namespace CrazyPandaTestTask
@@ -35,6 +36,14 @@ namespace CrazyPandaTestTask
 		public static bool IsLess(this float firstValue, float secondValue)
 		{
 			return firstValue - secondValue < Mathf.Epsilon;
+		}
+
+		public static void Update(this IEnumerable<IUpdatable> updatable)
+		{
+			foreach (IUpdatable localUpdatable in updatable)
+			{
+				localUpdatable.UpdateWork();
+			}
 		}
 	}
 }
