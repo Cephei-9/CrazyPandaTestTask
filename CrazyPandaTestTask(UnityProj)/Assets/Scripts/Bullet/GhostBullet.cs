@@ -1,28 +1,31 @@
 using CrazyPandaTestTask;
+using DefaultNamespace.BulletComponents;
+using DefaultNamespace.Engine;
 using UnityEngine;
 
 namespace DefaultNamespace
 {
-	[RequireComponent(typeof(Rigidbody2D))]
-	public class SimpleBullet : BulletBase<BulletData>
+	public class GhostBullet : BulletBase<BulletData>
 	{
 		[SerializeField]
 		private ChronoObject ChronoObject;
+		[SerializeField]
+		private ColorTimeScaleView TimeScaleView;
 
-		private PhysicsChronoEngine _engine;
+		private TransformChronoEngine _engine;
 		
 		public override void Shoot(Vector2 velocity, ITimeProvider timeProvider)
 		{
 			ChronoObject.Init(timeProvider);
-			
-			Rigidbody2D rb = GetComponent<Rigidbody2D>();
-			_engine = new PhysicsChronoEngine(ChronoObject, timeProvider, _data.EngineData, rb);
+			TimeScaleView.Init(ChronoObject);
+
+			_engine = new TransformChronoEngine(ChronoObject, timeProvider, _data.EngineData, transform);
 			_engine.AddChronoForce(velocity * _data.ShootVelocityMultiply, ForceMode.VelocityChange);
 			
 			base.Shoot(velocity, timeProvider);
 		}
 
-		private void FixedUpdate()
+		private void Update()
 		{
 			_engine.UpdateWork();
 		}

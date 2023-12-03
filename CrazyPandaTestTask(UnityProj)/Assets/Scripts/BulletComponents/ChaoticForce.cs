@@ -8,7 +8,7 @@ namespace DefaultNamespace.BulletComponents
 {
 	// Class can work with any Engin implementation. This is where the meaning of making the engine an abstraction is revealed
 	
-	public class ChaoticForceDealer : IUpdatable
+	public class ChaoticForce : IUpdatable
 	{
 		[Serializable]
 		public class Data
@@ -27,7 +27,7 @@ namespace DefaultNamespace.BulletComponents
 		private float _targetTime;
 		private float _timer;
 
-		public ChaoticForceDealer(Data data, IChronoEngine engine, ITimeProvider timeProvider, Transform transform)
+		public ChaoticForce(Data data, IChronoEngine engine, ITimeProvider timeProvider, Transform transform)
 		{
 			_data = data;
 			_engine = engine;
@@ -54,7 +54,7 @@ namespace DefaultNamespace.BulletComponents
 			Vector2 direction = Quaternion.AngleAxis(angle, Vector3.forward) * _transform.up;
 			float force = _data.ForceRange.GetRandom();
 			
-			_engine.AddForce(direction * force, ForceMode.VelocityChange);
+			_engine.AddChronoForce(direction * force, ForceMode.VelocityChange);
 		}
 
 		private void ResetTimer()
