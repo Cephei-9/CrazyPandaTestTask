@@ -43,8 +43,9 @@ namespace CrazyPandaTestTask
 		private void Update()
 		{
 			float averageAreasTimeWrap = CalculateAverageAreasTimeWrap();
+			float currentScale = averageAreasTimeWrap * OriginProvider.TimeScale;
 
-			if (averageAreasTimeWrap.IsNotEquals(DecoratorScale)) 
+			if (currentScale.IsNotEquals(TimeScale)) 
 				UpdateTimeScale(averageAreasTimeWrap);
 		}
 
@@ -58,10 +59,10 @@ namespace CrazyPandaTestTask
 
 		private void UpdateTimeScale(float averageAreasTimeWrap)
 		{
-			float previousScale = DecoratorScale;
+			float previousScale = TimeScale;
 			DecoratorScale = averageAreasTimeWrap;
 
-			ChangeTimeScaleEvent?.Invoke(previousScale, DecoratorScale);
+			ChangeTimeScaleEvent?.Invoke(previousScale, TimeScale);
 		}
 	}
 }
