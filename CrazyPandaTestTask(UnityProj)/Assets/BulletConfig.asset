@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a92d74afd3440d9eb0f875d138813e, type: 3}
+  m_Name: BulletConfig
+  m_EditorClassIdentifier: 
+  SimpleBullet:
+    Prefab: {fileID: 1403525240, guid: 31e6b7528990221439e743efa4d331c0, type: 3}
+    Data:
+      ShootVelocityMultiply: 1
+      EngineData:
+        UseDefaultGravity: 1
+        Gravity: 10
+        Drag: 0
+  InvertBullet:
+    Prefab: {fileID: 1518860231, guid: 3d319005c24a086479eb25a4c97a020b, type: 3}
+    Data:
+      ShootVelocityMultiply: 1
+      EngineData:
+        UseDefaultGravity: 0
+        Gravity: 1
+        Drag: 0
+      InvertData:
+        InvertFactor: 0.05
+  GhostBullet:
+    Prefab: {fileID: 306880747, guid: 66061512051802640a28834a1e36961b, type: 3}
+    Data:
+      ShootVelocityMultiply: 0.8
+      EngineData:
+        UseDefaultGravity: 0
+        Gravity: 6
+        Drag: 0
+  ChaoticBullet:
+    Prefab: {fileID: 860874958, guid: ba578054ac82a434e8aff0799540c9cb, type: 3}
+    Data:
+      ShootVelocityMultiply: 0.6
+      EngineData:
+        UseDefaultGravity: 0
+        Gravity: 15
+        Drag: 0
+      ForceData:
+        TimeRange:
+          Min: 0.2
+          Max: 0.8
+        ForceRange:
+          Min: 2
+          Max: 4
+        AreaAngle: 90
