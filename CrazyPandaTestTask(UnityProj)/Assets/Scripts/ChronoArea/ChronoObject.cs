@@ -19,7 +19,7 @@ namespace CrazyPandaTestTask
 		public void Init(ITimeProvider originProvider)
 		{
 			OriginProvider = originProvider;
-			DecoratorScale = 1;
+			UpdateTimeScale(1);
 			
 			_areaProviders = new List<ChronoAreaProvider>();
 		}
