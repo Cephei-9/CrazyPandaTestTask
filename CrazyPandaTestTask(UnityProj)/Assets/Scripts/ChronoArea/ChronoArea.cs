@@ -30,5 +30,15 @@ namespace CrazyPandaTestTask
 				_chronoObjects.Remove(timeWrapObject);
 			}
 		}
+
+		public void Active()
+		{
+			gameObject.SetActive(true);
+		}
+
+		public void DeActive()
+		{
+			gameObject.SetActive(false);
+		}
 	}
 }

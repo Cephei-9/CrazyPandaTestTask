@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace DefaultNamespace.Factory
@@ -9,5 +10,12 @@ namespace DefaultNamespace.Factory
 		public BulletConfig<InvertBullet, InvertBullet.Data> InvertBullet;
 		public BulletConfig<GhostBullet, BulletData> GhostBullet;
 		public BulletConfig<ChaoticBullet, ChaoticBullet.Data> ChaoticBullet;
+	}
+
+	[Serializable]
+	public class BulletConfig<TInitializedBullet, TData> where TInitializedBullet : MonoBehaviour, IInitializeBullet<TData>
+	{
+		public TInitializedBullet Prefab;
+		public TData Data;
 	}
 }

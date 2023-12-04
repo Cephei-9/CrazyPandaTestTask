@@ -18,21 +18,27 @@ namespace DefaultNamespace
 
 		public void UpdateWork()
 		{
+			if (HandleAreaInput())
+				return;
+			
 			HandleGunInput(0, LeftGunInput);
 			HandleGunInput(1, RightGunInput);
-			HandleAreaInput();
 		}
 
-		private void HandleAreaInput()
+		private bool HandleAreaInput()
 		{
 			AreaChangeInput.ChangeLeftArea = CheckButtonPressed(0, KeyCode.LeftControl, KeyCode.LeftShift);
-			AreaChangeInput.ChangeLeftArea = CheckButtonPressed(1, KeyCode.LeftControl, KeyCode.LeftShift);
+			AreaChangeInput.ChangeRightArea = CheckButtonPressed(1, KeyCode.LeftControl, KeyCode.LeftShift);
+
+			return AreaChangeInput.ChangeLeftArea || AreaChangeInput.ChangeRightArea;
 		}
 
 		private void HandleGunInput(int mouseButtonIndex, GunInput gunInput)
 		{
-			gunInput.Shoot = CheckButtonPressed(mouseButtonIndex);
 			gunInput.ChangeBullet = CheckButtonPressed(mouseButtonIndex, KeyCode.LeftControl);
+			
+			if(!gunInput.ChangeBullet)
+				gunInput.Shoot = CheckButtonPressed(mouseButtonIndex);
 		}
 
 		private bool CheckButtonPressed(int mouseButtonIndex, params KeyCode[] modifiers)

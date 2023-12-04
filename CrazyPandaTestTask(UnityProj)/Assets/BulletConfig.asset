@@ -23,13 +23,13 @@ MonoBehaviour:
   InvertBullet:
     Prefab: {fileID: 1518860231, guid: 3d319005c24a086479eb25a4c97a020b, type: 3}
     Data:
-      ShootVelocityMultiply: 1
+      ShootVelocityMultiply: 0.3
       EngineData:
         UseDefaultGravity: 0
         Gravity: 1
         Drag: 0
       InvertData:
-        InvertFactor: 0.05
+        InvertFactor: 0.1
   GhostBullet:
     Prefab: {fileID: 306880747, guid: 66061512051802640a28834a1e36961b, type: 3}
     Data:

@@ -5,6 +5,7 @@ namespace DefaultNamespace
 		Simple,
 		Ghost,
 		Invert,
-		Chaotic
+		Chaotic,
+		Max
 	}
 }

@@ -26,6 +26,7 @@ namespace DefaultNamespace
 			IChronoEngine.Data data, Rigidbody2D rb) : base(targetProvider, unscaledProvider, data)
 		{
 			_rb = rb;
+			UpdateMass(targetProvider.TimeScale);
 		}
 
 		public override void AddForce(Vector2 force, ForceMode forceMode = ForceMode.Force)
@@ -48,6 +49,11 @@ namespace DefaultNamespace
 
 			Velocity *= scaleDiff;
 			_rb.mass /= scaleDiff;
+		}
+
+		private void UpdateMass(float scaleDelta)
+		{
+			_rb.mass /= scaleDelta;
 		}
 	}
 }
