@@ -7,6 +7,11 @@ namespace CrazyPandaTestTask
 {
 	public class ChronoObject : MonoBehaviour, IChronoObject, ITimeProviderDecorator
 	{
+		public float DecoratorScaleView;
+		public float TimeScaleView;
+		
+		//
+		
 		private List<ChronoAreaProvider> _areaProviders;
 
 		public Vector2 Position => transform.position;
@@ -49,6 +54,9 @@ namespace CrazyPandaTestTask
 
 			if (currentScale.IsNotEquals(TimeScale)) 
 				UpdateTimeScale(areasTimeWrap);
+
+			DecoratorScaleView = DecoratorScale;
+			TimeScaleView = TimeScale;
 		}
 		
 		private void UpdateTimeScale(float averageAreasTimeWrap)

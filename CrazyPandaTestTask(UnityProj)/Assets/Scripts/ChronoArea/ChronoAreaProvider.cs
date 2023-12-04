@@ -6,9 +6,9 @@ namespace CrazyPandaTestTask
 	public class ChronoAreaProvider
 	{
 		public float TimeWrapValue;
-		public ChronoArea.AreaBlendMode BlendMode;
+		public AreaBlendMode BlendMode;
 
-		public ChronoAreaProvider(ChronoArea.AreaBlendMode blendMode)
+		public ChronoAreaProvider(AreaBlendMode blendMode)
 		{
 			BlendMode = blendMode;
 		}
@@ -18,27 +18,36 @@ namespace CrazyPandaTestTask
 		// and then with Multiply
 		public static float BlendAreasTimeWrap(IEnumerable<ChronoAreaProvider> providers)
 		{
+			if (providers.Count() == 0)
+				return 1;
+
+			float result = CalculateAverage(providers);
+
+			foreach (ChronoAreaProvider provider in providers)
+			{
+				if (provider.BlendMode == AreaBlendMode.Multiply) 
+					result *= provider.TimeWrapValue;
+			}
+
+			return result;
+		}
+
+		private static float CalculateAverage(IEnumerable<ChronoAreaProvider> providers)
+		{
 			float result = 0;
 			int averageProvidersCount = 0;
 
 			foreach (ChronoAreaProvider provider in providers)
 			{
-				if (provider.BlendMode != ChronoArea.AreaBlendMode.Average) 
+				if (provider.BlendMode != AreaBlendMode.Average)
 					continue;
 
 				result += provider.TimeWrapValue;
 				averageProvidersCount++;
 			}
-
-			result /= averageProvidersCount;
 			
-			foreach (ChronoAreaProvider provider in providers)
-			{
-				if (provider.BlendMode == ChronoArea.AreaBlendMode.Multiply) 
-					result *= provider.TimeWrapValue;
-			}
-
-			return result;
+			;
+			return averageProvidersCount > 0 ? result / averageProvidersCount : 1;
 		}
 	}
 }

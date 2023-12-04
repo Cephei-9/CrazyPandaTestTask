@@ -10,12 +10,6 @@ namespace CrazyPandaTestTask
 	
 	public class ChronoArea : MonoBehaviour
 	{
-		public enum AreaBlendMode
-		{
-			Average,
-			Multiply
-		}
-
 		[SerializeField]
 		private AreaBlendMode BlendMode;
 		[SerializeField]

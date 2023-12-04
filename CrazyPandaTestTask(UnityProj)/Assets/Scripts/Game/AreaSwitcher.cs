@@ -48,10 +48,10 @@ namespace Game
 
 			private int _currentIndex;
 
-			public AreasList(ChronoArea[] areas, int currentIndex)
+			public AreasList(ChronoArea[] areas, int startIndex)
 			{
 				_areas = areas;
-				_currentIndex = currentIndex;
+				_currentIndex = Mathf.Clamp(startIndex, 0, _areas.Length);
 				
 				DeActiveAllAreas(areas);
 				ActiveCurrentArea(true);
