@@ -6,36 +6,21 @@ using UnityEngine;
 
 namespace CrazyPandaTestTask.ChronoArea
 {
-	public class ChronoObject : MonoBehaviour, IChronoObject, ITimeProviderDecorator
+	public class ChronoObject : TimeProviderDecoratorBase, IChronoObject, IUpdatable
 	{
-		public float DecoratorScaleView;
-		public float TimeScaleView;
-		
-		//
-		
 		private List<ChronoAreaProvider> _areaProviders;
 
-		public Vector2 Position => transform.position;
+		private Transform _transform;
+
+		public Vector2 Position => _transform.position;
 		
-		public float DeltaTime => DecoratorScale * OriginProvider.DeltaTime;
-		public float FixedDeltaTime => DecoratorScale * OriginProvider.FixedDeltaTime;
-		public float TimeScale => DecoratorScale * OriginProvider.TimeScale;
-		public event Action<float, float> ChangeTimeScaleEvent;
-		public float DecoratorScale { get; private set; }
-		public ITimeProvider OriginProvider { get; private set; }
-
-		public void Init(ITimeProvider originProvider)
+		public ChronoObject(ITimeProvider originProvider, Transform transform)
 		{
+			_transform = transform;
 			OriginProvider = originProvider;
-			UpdateTimeScale(1);
-			
 			_areaProviders = new List<ChronoAreaProvider>();
-		}
-
-		private void Start()
-		{
-			if(OriginProvider == null)
-				Init(ITimeProvider.Default);
+			
+			UpdateTimeScale(1);
 		}
 
 		public void EnterArea(ChronoAreaProvider areaProvider)
@@ -48,24 +33,21 @@ namespace CrazyPandaTestTask.ChronoArea
 			_areaProviders.SmartRemove(areaProvider);
 		}
 
-		private void Update()
+		public void UpdateWork()
 		{
 			float areasTimeWrap = ChronoAreaProvider.BlendAreasTimeWrap(_areaProviders);
 			float currentScale = areasTimeWrap * OriginProvider.TimeScale;
 
 			if (currentScale.IsNotEquals(TimeScale)) 
 				UpdateTimeScale(areasTimeWrap);
-
-			DecoratorScaleView = DecoratorScale;
-			TimeScaleView = TimeScale;
 		}
 		
-		private void UpdateTimeScale(float averageAreasTimeWrap)
+		private void UpdateTimeScale(float areasTimeWrap)
 		{
 			float previousScale = TimeScale;
-			DecoratorScale = averageAreasTimeWrap;
+			DecoratorScale = areasTimeWrap;
 
-			ChangeTimeScaleEvent?.Invoke(previousScale, TimeScale);
+			InvokeChangeTimeScaleEvent(previousScale, TimeScale);
 		}
 	}
 }

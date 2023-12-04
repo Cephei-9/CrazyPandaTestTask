@@ -21,6 +21,7 @@ namespace CrazyPandaTestTask.Game
 		[SerializeField]
 		private Range MainTimeScaleRange = new(0, 2);
 
+		[Space]
 		[SerializeField]
 		private GunConfig LeftGunConfig;
 		[SerializeField]
@@ -30,18 +31,35 @@ namespace CrazyPandaTestTask.Game
 
 		private void Start()
 		{
-			_input = new StandAloneInput();
-			TestFactory factory = new TestFactory(BulletConfigs);
+			TestFactory factory = new(BulletConfigs);
+			TimeProviderDecorator mainProvider = new(ITimeProvider.Default);
+			
+			InitInput();
+			InitAreaSwitcher();
+			InitGuns(mainProvider, factory);
+			InitMainTime(mainProvider);
+		}
 
-			TimeProviderDecorator mainProvider = new TimeProviderDecorator(ITimeProvider.Default);
+		private void InitMainTime(IWritableTimeProvider mainProvider)
+		{
+			MainTimeScaleSlider.Init(MainTimeScaleRange, START_GAME_TIME_SCALE);
+			MainTimeScaleSlider.ChangeInputEvent += mainProvider.ChangeTimeScale;
+		}
 
+		private void InitAreaSwitcher()
+		{
+			AreaSwitcher.Init(_input.AreaChangeInput);
+		}
+
+		private void InitGuns(ITimeProvider mainProvider, IBulletFactory factory)
+		{
 			LeftGunConfig.Init(mainProvider, _input.LeftGunInput, factory);
 			RightGunConfig.Init(mainProvider, _input.RightGunInput, factory);
-			
-			AreaSwitcher.Init(_input.AreaChangeInput);
-			
-			MainTimeScaleSlider.Init(MainTimeScaleRange, START_GAME_TIME_SCALE);
-			MainTimeScaleSlider.ChangeInputEvent += (t) => mainProvider.ChangeTimeScale(t);
+		}
+
+		private void InitInput()
+		{
+			_input = new StandAloneInput();
 		}
 
 		private void Update()

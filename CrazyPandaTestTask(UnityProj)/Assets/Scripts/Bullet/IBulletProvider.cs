@@ -1,8 +1,9 @@
 using System;
 using CrazyPandaTestTask.Bullet;
 
-namespace CrazyPandaTestTask.Factory
+namespace Bullet
 {
+	// Class like a Abstract Fabric but more generic and with useful integration with BulletType 
 	public interface IBulletProvider<TBullet>
 	{
 		TBullet GetSimpleBullet();

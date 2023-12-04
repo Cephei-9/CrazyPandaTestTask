@@ -18,20 +18,23 @@ namespace CrazyPandaTestTask.Bullet
 		}
 
 		[SerializeField]
-		private ChronoObject ChronoObject;
+		private ChronoObjectCollider ChronoCollider;
 		[SerializeField]
 		private ColorTimeScaleView TimeScaleView;
 
 		private PhysicsChronoEngine _engine;
+		private ChronoObject _chronoObject;
 
 		public override void Shoot(Vector2 velocity, ITimeProvider timeProvider)
 		{
-			TimeScaleView.Init(ChronoObject);
-			ChronoObject.Init(timeProvider);
+			_chronoObject = new ChronoObject(timeProvider, transform);
+			ChronoCollider.Init(_chronoObject);
+
+			TimeScaleView.Init(_chronoObject);
 
 			// If I were using a Mono-component approach, it would be difficult to use non-Mono classes and configure
 			// objects so conveniently
-			InvertTimeProvider invertTimeProvider = new(_data.InvertData, ChronoObject);
+			InvertTimeProvider invertTimeProvider = new(_data.InvertData, _chronoObject);
 
 			Rigidbody2D rb = GetComponent<Rigidbody2D>();
 			_engine = new PhysicsChronoEngine(invertTimeProvider, timeProvider, _data.EngineData, rb);
@@ -50,6 +53,11 @@ namespace CrazyPandaTestTask.Bullet
 		private void FixedUpdate()
 		{
 			_engine.UpdateWork();
+		}
+
+		private void Update()
+		{
+			_chronoObject.UpdateWork();
 		}
 	}
 }

@@ -8,6 +8,7 @@ namespace CrazyPandaTestTask.Time
 		public float FixedDeltaTime => MainTimeProvider.UnscaledFixedDeltaTime;
 		public float TimeScale => MainTimeProvider.TimeScale;
 		
+		// Unscaled time should never change
 		public event Action<float, float> ChangeTimeScaleEvent;
 	}
 }

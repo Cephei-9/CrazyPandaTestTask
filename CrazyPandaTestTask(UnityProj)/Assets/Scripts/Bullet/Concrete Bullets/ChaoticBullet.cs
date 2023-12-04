@@ -21,9 +21,10 @@ namespace CrazyPandaTestTask.Bullet
 		}
 		
 		[SerializeField]
-		private ChronoObject ChronoObject;
+		private ChronoObjectCollider ChronoCollider;
 
 		private PhysicsChronoEngine _engine;
+		private ChronoObject _chronoObject;
 		private ChaoticForce _chaoticForce;
 
 		private IUpdatable[] _updatable;
@@ -45,13 +46,14 @@ namespace CrazyPandaTestTask.Bullet
 
 		private void InitChrono(ITimeProvider timeProvider)
 		{
-			ChronoObject.Init(timeProvider);
+			_chronoObject = new ChronoObject(timeProvider, transform);
+			ChronoCollider.Init(_chronoObject);
 		}
 
 		private void InitEngine(Vector2 velocity, ITimeProvider timeProvider)
 		{
 			Rigidbody2D rb = GetComponent<Rigidbody2D>();
-			_engine = new PhysicsChronoEngine(ChronoObject, timeProvider, _data.EngineData, rb);
+			_engine = new PhysicsChronoEngine(_chronoObject, timeProvider, _data.EngineData, rb);
 			_engine.AddChronoForce(velocity * _data.ShootVelocityMultiply, ForceMode.VelocityChange);
 		}
 
@@ -64,7 +66,8 @@ namespace CrazyPandaTestTask.Bullet
 		{
 			_updatable = new IUpdatable[]
 			{
-				_chaoticForce
+				_chaoticForce,
+				_chronoObject
 			};
 
 			_fixedUpdatable = new IFixedUpdatable[]
