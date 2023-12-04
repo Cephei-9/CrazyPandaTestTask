@@ -35,7 +35,9 @@ namespace DefaultNamespace.Factory
 		{
 			TBullet newBullet = Object.Instantiate(config.Prefab, instantiateData.Position, instantiateData.Rotation,
 				instantiateData.Parent);
+			
 			newBullet.InitData(config.Data);
+			newBullet.DestroyEvent += () => Object.Destroy(newBullet.gameObject);
 
 			return newBullet;
 		}

@@ -15,6 +15,7 @@ namespace DefaultNamespace
 		public event Action DestroyEvent;
 
 		protected TData _data;
+		protected bool _beginDestroy;
 
 		public virtual void InitData(TData data)
 		{
@@ -47,6 +48,11 @@ namespace DefaultNamespace
 
 		public virtual async Task DestroyBullet()
 		{
+			if (_beginDestroy)
+				return;
+			
+			_beginDestroy = true;
+			
 			IEnumerable<Task> viewsDestroyTasks = Views.Select(v => v.Destroy());
 			await Task.WhenAll(viewsDestroyTasks);
 			
