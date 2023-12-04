@@ -71,6 +71,13 @@ namespace DefaultNamespace
 			};
 		}
 
+		protected override void OnBulletCollision(Collision2D col)
+		{
+			base.OnBulletCollision(col);
+			
+			_engine.OnCollision();
+		}
+
 		private void FixedUpdate()
 		{
 			_fixedUpdatable.Update();

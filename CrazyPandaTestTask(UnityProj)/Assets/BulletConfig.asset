@@ -29,7 +29,7 @@ MonoBehaviour:
         Gravity: 1
         Drag: 0
       InvertData:
-        InvertFactor: 0.1
+        InvertFactor: 1
   GhostBullet:
     Prefab: {fileID: 306880747, guid: 66061512051802640a28834a1e36961b, type: 3}
     Data:
@@ -41,7 +41,7 @@ MonoBehaviour:
   ChaoticBullet:
     Prefab: {fileID: 860874958, guid: ba578054ac82a434e8aff0799540c9cb, type: 3}
     Data:
-      ShootVelocityMultiply: 0.6
+      ShootVelocityMultiply: 1
       EngineData:
         UseDefaultGravity: 0
         Gravity: 15
@@ -53,4 +53,4 @@ MonoBehaviour:
         ForceRange:
           Min: 2
           Max: 4
-        AreaAngle: 90
+        AreaAngle: 150

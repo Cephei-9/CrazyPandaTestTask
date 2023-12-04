@@ -22,6 +22,13 @@ namespace DefaultNamespace
 			base.Shoot(velocity, timeProvider);
 		}
 
+		protected override void OnBulletCollision(Collision2D col)
+		{
+			base.OnBulletCollision(col);
+			
+			_engine.OnCollision();
+		}
+
 		private void FixedUpdate()
 		{
 			_engine.UpdateWork();

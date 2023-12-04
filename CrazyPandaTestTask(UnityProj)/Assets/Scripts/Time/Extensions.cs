@@ -11,10 +11,13 @@ namespace CrazyPandaTestTask
 		{
 			int indexOfElement = list.IndexOf(element);
 			
-			if (indexOfElement == -1)
-				return;
-
-			list[indexOfElement] = list[^1];
+			if (indexOfElement != -1)
+				list.SmartRemove(indexOfElement);
+		}
+		
+		public static void SmartRemove<T>(this List<T> list, int index)
+		{
+			list[index] = list[^1];
 			list.RemoveAt(list.Count - 1);
 		}
 

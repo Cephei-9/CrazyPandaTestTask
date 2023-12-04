@@ -23,7 +23,7 @@ namespace DefaultNamespace
 
 		private void OnCollisionEnter2D(Collision2D col)
 		{
-			ForeachViews(v => v.Collision(col));
+			OnBulletCollision(col);
 		}
 
 		public virtual void Prewarm()
@@ -38,6 +38,11 @@ namespace DefaultNamespace
 				v.InitTimeProvider(timeProvider);
 				v.Shoot();
 			});
+		}
+
+		protected virtual void OnBulletCollision(Collision2D col)
+		{
+			ForeachViews(v => v.Collision(col));
 		}
 
 		public virtual async Task DestroyBullet()

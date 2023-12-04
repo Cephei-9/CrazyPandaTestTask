@@ -19,8 +19,7 @@ namespace DefaultNamespace.Engine
 
 		public void UpdateWork()
 		{
-			UpdateGravity();
-			HandleTimeScaleChanging();
+			UpdateGravityValue();
 			AddDrag();
 			AddGravity();
 			ApplyVelocity();
@@ -35,21 +34,12 @@ namespace DefaultNamespace.Engine
 		public override void AddChronoForce(Vector2 force, ForceMode forceMode = ForceMode.Force)
 		{
 			Velocity +=
-				IChronoEngine.ConvertForceToVelocity(force, forceMode, _targetProvider.DeltaTime, 1,
-					_targetProvider.TimeScale);
-		}
-
-		private void HandleTimeScaleChanging()
-		{
-			if (!CheckChangeTimeScale(out float scaleDiff)) 
-				return;
-
-			Velocity *= scaleDiff;
+				IChronoEngine.ConvertForceToVelocity(force, forceMode, _targetProvider.DeltaTime, 1, 1);
 		}
 
 		private void ApplyVelocity()
 		{
-			_transform.position += (Vector3)Velocity * _unscaledProvider.DeltaTime;
+			_transform.position += (Vector3)Velocity * _targetProvider.DeltaTime;
 		}
 	}
 }
