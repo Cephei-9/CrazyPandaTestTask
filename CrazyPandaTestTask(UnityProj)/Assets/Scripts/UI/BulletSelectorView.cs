@@ -8,13 +8,13 @@ namespace CrazyPandaTestTask.UI
 	public class BulletSelectorView : MonoBehaviour, IBulletSelectorView
 	{
 		[SerializeField]
-		private Sprite SimpleBullet;
+		private Color SimpleBullet;
 		[SerializeField]
-		private Sprite GhostBullet;
+		private Color GhostBullet;
 		[SerializeField]
-		private Sprite InvertBullet;
+		private Color InvertBullet;
 		[SerializeField]
-		private Sprite ChaoticBullet;
+		private Color ChaoticBullet;
 
 		[SerializeField]
 		private Image Image;
@@ -23,7 +23,7 @@ namespace CrazyPandaTestTask.UI
 
 		public void ShowBullet(BulletType type)
 		{
-			Sprite nextSprite = type switch
+			Color nextColor = type switch
 			{
 				BulletType.Simple => SimpleBullet,
 				BulletType.Ghost => GhostBullet,
@@ -32,12 +32,12 @@ namespace CrazyPandaTestTask.UI
 				_ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
 			};
 
-			ShowSprite(nextSprite);
+			ShowSprite(nextColor);
 		}
 
-		private void ShowSprite(Sprite sprite)
+		private void ShowSprite(Color color)
 		{
-			Image.sprite = sprite;
+			Image.color = color;
 		}
 	}
 }
