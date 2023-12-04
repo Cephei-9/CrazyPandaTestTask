@@ -7,14 +7,16 @@ namespace CrazyPandaTestTask
 {
 	public class ChronoObject : MonoBehaviour, IChronoObject, ITimeProviderDecorator
 	{
+		private List<ChronoAreaProvider> _areaProviders;
+
+		public Vector2 Position => transform.position;
+		
 		public float DeltaTime => DecoratorScale * OriginProvider.DeltaTime;
 		public float FixedDeltaTime => DecoratorScale * OriginProvider.FixedDeltaTime;
 		public float TimeScale => DecoratorScale * OriginProvider.TimeScale;
 		public event Action<float, float> ChangeTimeScaleEvent;
 		public float DecoratorScale { get; private set; }
 		public ITimeProvider OriginProvider { get; private set; }
-
-		private List<ChronoAreaProvider> _areaProviders;
 
 		public void Init(ITimeProvider originProvider)
 		{
@@ -42,21 +44,13 @@ namespace CrazyPandaTestTask
 
 		private void Update()
 		{
-			float averageAreasTimeWrap = CalculateAverageAreasTimeWrap();
-			float currentScale = averageAreasTimeWrap * OriginProvider.TimeScale;
+			float areasTimeWrap = ChronoAreaProvider.BlendAreasTimeWrap(_areaProviders);
+			float currentScale = areasTimeWrap * OriginProvider.TimeScale;
 
 			if (currentScale.IsNotEquals(TimeScale)) 
-				UpdateTimeScale(averageAreasTimeWrap);
+				UpdateTimeScale(areasTimeWrap);
 		}
-
-		private float CalculateAverageAreasTimeWrap()
-		{
-			if (_areaProviders.Count == 0)
-				return 1;
-			
-			return _areaProviders.Sum(p => p.TimeWrapValue) / _areaProviders.Count;
-		}
-
+		
 		private void UpdateTimeScale(float averageAreasTimeWrap)
 		{
 			float previousScale = TimeScale;

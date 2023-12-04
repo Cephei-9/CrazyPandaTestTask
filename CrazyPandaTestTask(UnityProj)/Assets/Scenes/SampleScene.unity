@@ -1126,6 +1126,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Area
       objectReference: {fileID: 0}
+    - target: {fileID: 458430107500999940, guid: 897dbde534e474e458966da0fce0aa47, type: 3}
+      propertyPath: Curve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458430107500999940, guid: 897dbde534e474e458966da0fce0aa47, type: 3}
+      propertyPath: Curve.m_Curve.Array.data[0].inSlope
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 458430107500999940, guid: 897dbde534e474e458966da0fce0aa47, type: 3}
+      propertyPath: Curve.m_Curve.Array.data[1].inSlope
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 458430107500999940, guid: 897dbde534e474e458966da0fce0aa47, type: 3}
+      propertyPath: Curve.m_Curve.Array.data[0].outSlope
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 458430107500999940, guid: 897dbde534e474e458966da0fce0aa47, type: 3}
+      propertyPath: Curve.m_Curve.Array.data[1].outSlope
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4005173147051762756, guid: 897dbde534e474e458966da0fce0aa47, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2162,6 +2182,34 @@ PrefabInstance:
     - target: {fileID: 115899994792764586, guid: 897dbde534e474e458966da0fce0aa47, type: 3}
       propertyPath: m_Name
       value: Area
+      objectReference: {fileID: 0}
+    - target: {fileID: 458430107500999940, guid: 897dbde534e474e458966da0fce0aa47, type: 3}
+      propertyPath: Curve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458430107500999940, guid: 897dbde534e474e458966da0fce0aa47, type: 3}
+      propertyPath: Curve.m_Curve.Array.data[0].inSlope
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 458430107500999940, guid: 897dbde534e474e458966da0fce0aa47, type: 3}
+      propertyPath: Curve.m_Curve.Array.data[1].inSlope
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 458430107500999940, guid: 897dbde534e474e458966da0fce0aa47, type: 3}
+      propertyPath: Curve.m_Curve.Array.data[0].outSlope
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 458430107500999940, guid: 897dbde534e474e458966da0fce0aa47, type: 3}
+      propertyPath: Curve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 458430107500999940, guid: 897dbde534e474e458966da0fce0aa47, type: 3}
+      propertyPath: Curve.m_Curve.Array.data[1].outSlope
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 458430107500999940, guid: 897dbde534e474e458966da0fce0aa47, type: 3}
+      propertyPath: Curve.m_Curve.Array.data[0].outWeight
+      value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 4005173147051762756, guid: 897dbde534e474e458966da0fce0aa47, type: 3}
       propertyPath: m_RootOrder
