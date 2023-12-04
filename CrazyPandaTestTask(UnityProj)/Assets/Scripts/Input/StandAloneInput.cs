@@ -1,7 +1,7 @@
-using DefaultNamespace.Runtime;
+using CrazyPandaTestTask.Tools;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace CrazyPandaTestTask.Input
 {
 	public class StandAloneInput : IInput, IUpdatable
 	{
@@ -45,11 +45,11 @@ namespace DefaultNamespace
 		{
 			foreach (KeyCode keyCode in modifiers)
 			{
-				if (Input.GetKey(keyCode) == false)
+				if (UnityEngine.Input.GetKey(keyCode) == false)
 					return false;
 			}
 
-			return Input.GetMouseButtonDown(mouseButtonIndex);
+			return UnityEngine.Input.GetMouseButtonDown(mouseButtonIndex);
 		}
 	}
 }

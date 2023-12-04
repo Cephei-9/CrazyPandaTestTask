@@ -1,9 +1,8 @@
-using System;
-using CrazyPandaTestTask;
-using DefaultNamespace.Runtime;
+using CrazyPandaTestTask.Time;
+using CrazyPandaTestTask.Tools;
 using UnityEngine;
 
-namespace DefaultNamespace.Engine
+namespace CrazyPandaTestTask.Engine
 {
 	public class TransformChronoEngine : ChronoEngineBase, ITransformChronoEngine, IUpdatable
 	{

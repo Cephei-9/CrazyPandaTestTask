@@ -1,4 +1,4 @@
-namespace DefaultNamespace.Runtime
+namespace CrazyPandaTestTask.Tools
 {
 	public interface IUpdatable
 	{

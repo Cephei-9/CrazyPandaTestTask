@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using CrazyPandaTestTask.Time;
+using CrazyPandaTestTask.Tools;
 using UnityEngine;
 
-namespace CrazyPandaTestTask
+namespace CrazyPandaTestTask.ChronoArea
 {
 	public class ChronoObject : MonoBehaviour, IChronoObject, ITimeProviderDecorator
 	{

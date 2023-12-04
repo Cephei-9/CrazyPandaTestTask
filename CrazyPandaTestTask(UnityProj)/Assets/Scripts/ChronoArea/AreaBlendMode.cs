@@ -1,4 +1,4 @@
-namespace CrazyPandaTestTask
+namespace CrazyPandaTestTask.ChronoArea
 {
 	public enum AreaBlendMode
 	{

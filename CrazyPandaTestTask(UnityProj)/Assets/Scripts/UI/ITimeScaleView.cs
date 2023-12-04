@@ -1,6 +1,7 @@
 using System;
+using Range = CrazyPandaTestTask.Tools.Range;
 
-namespace DefaultNamespace.UI
+namespace CrazyPandaTestTask.UI
 {
 	// View like MVC. Passive show and provide input
 	

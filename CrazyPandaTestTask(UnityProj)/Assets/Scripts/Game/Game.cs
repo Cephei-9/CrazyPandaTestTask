@@ -1,12 +1,11 @@
 using System;
-using CrazyPandaTestTask;
-using DefaultNamespace;
-using DefaultNamespace.Factory;
-using DefaultNamespace.UI;
-using Unity.VisualScripting;
+using CrazyPandaTestTask.Factory;
+using CrazyPandaTestTask.Input;
+using CrazyPandaTestTask.Time;
+using CrazyPandaTestTask.UI;
 using UnityEngine;
 
-namespace Game
+namespace CrazyPandaTestTask.Game
 {
 	public class Game : MonoBehaviour
 	{
@@ -42,10 +41,10 @@ namespace Game
 		[Serializable]
 		private class GunConfig
 		{
-			public Gun.Data GunData;
+			public Gun.Gun.Data GunData;
 			public TimeScaleSlider TimeScaleSlider;
 			public BulletSelectorView BulletSelectorView;
-			public Gun Gun;
+			public Gun.Gun Gun;
 
 			public void Init(ITimeProvider originProvider, GunInput input, IBulletFactory factory)
 			{

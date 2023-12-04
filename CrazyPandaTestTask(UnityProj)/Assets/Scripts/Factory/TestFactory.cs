@@ -1,8 +1,9 @@
 using System;
+using CrazyPandaTestTask.Bullet;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace DefaultNamespace.Factory
+namespace CrazyPandaTestTask.Factory
 {
 	// I wanted to write a normal factory with Pool, AssetProvider and StaticDataServices, but I didn't have enough time,
 	// so I quickly threw this together

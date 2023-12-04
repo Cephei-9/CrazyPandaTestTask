@@ -1,4 +1,4 @@
-namespace DefaultNamespace
+namespace CrazyPandaTestTask.Bullet
 {
 	public enum BulletType
 	{

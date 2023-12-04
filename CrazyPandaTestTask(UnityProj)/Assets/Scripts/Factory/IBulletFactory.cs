@@ -1,6 +1,7 @@
+using CrazyPandaTestTask.Bullet;
 using UnityEngine;
 
-namespace DefaultNamespace.Factory
+namespace CrazyPandaTestTask.Factory
 {
 	public interface IBulletFactory
 	{

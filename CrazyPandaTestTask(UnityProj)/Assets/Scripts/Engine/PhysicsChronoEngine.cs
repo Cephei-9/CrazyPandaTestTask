@@ -1,9 +1,8 @@
-using CrazyPandaTestTask;
-using DefaultNamespace.Runtime;
-using Unity.VisualScripting;
+using CrazyPandaTestTask.Time;
+using CrazyPandaTestTask.Tools;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace CrazyPandaTestTask.Engine
 {
 	public class PhysicsChronoEngine : ChronoEngineBase, IFixedUpdatable
 	{

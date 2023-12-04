@@ -1,9 +1,9 @@
-using System;
 using System.Collections.Generic;
+using CrazyPandaTestTask.Time;
+using CrazyPandaTestTask.Tools;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace CrazyPandaTestTask
+namespace CrazyPandaTestTask.ChronoArea
 {
 	// In fact, with Area I did everything very simply. It would be good to allocate the interface of the area, maybe a
 	// base class, but somehow I didn't get to it

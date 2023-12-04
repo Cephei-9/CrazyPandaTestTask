@@ -1,11 +1,7 @@
-using System;
-using System.Collections.Generic;
-using CrazyPandaTestTask;
-using DefaultNamespace;
+using CrazyPandaTestTask.Input;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Game
+namespace CrazyPandaTestTask.Game
 {
 	public class AreaSwitcher : MonoBehaviour
 	{
@@ -13,9 +9,9 @@ namespace Game
 		private int StartRightIndex, StartLeftIndex;
 		[Space]
 		[SerializeField]
-		private ChronoArea[] LeftAreas;
+		private ChronoArea.ChronoArea[] LeftAreas;
 		[SerializeField]
-		private ChronoArea[] RightAreas;
+		private ChronoArea.ChronoArea[] RightAreas;
 
 		private AreaChangeInput _input;
 
@@ -44,11 +40,11 @@ namespace Game
 
 		private struct AreasList
 		{
-			private ChronoArea[] _areas;
+			private ChronoArea.ChronoArea[] _areas;
 
 			private int _currentIndex;
 
-			public AreasList(ChronoArea[] areas, int startIndex)
+			public AreasList(ChronoArea.ChronoArea[] areas, int startIndex)
 			{
 				_areas = areas;
 				_currentIndex = Mathf.Clamp(startIndex, 0, _areas.Length);
@@ -69,9 +65,9 @@ namespace Game
 				ActiveCurrentArea(true);
 			}
 
-			private static void DeActiveAllAreas(ChronoArea[] areas)
+			private static void DeActiveAllAreas(ChronoArea.ChronoArea[] areas)
 			{
-				foreach (ChronoArea chronoArea in areas)
+				foreach (ChronoArea.ChronoArea chronoArea in areas)
 				{
 					chronoArea.DeActive();
 				}

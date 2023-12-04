@@ -1,11 +1,13 @@
 using System;
-using CrazyPandaTestTask;
-using DefaultNamespace.Factory;
-using DefaultNamespace.UI;
+using CrazyPandaTestTask.Bullet;
+using CrazyPandaTestTask.Factory;
+using CrazyPandaTestTask.Input;
+using CrazyPandaTestTask.Time;
+using CrazyPandaTestTask.UI;
 using UnityEngine;
-using UnityEngine.Serialization;
+using Range = CrazyPandaTestTask.Tools.Range;
 
-namespace DefaultNamespace
+namespace CrazyPandaTestTask.Gun
 {
 	public class Gun : MonoBehaviour
 	{

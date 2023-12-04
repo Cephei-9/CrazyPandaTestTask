@@ -1,9 +1,8 @@
 using System;
-using CrazyPandaTestTask;
+using CrazyPandaTestTask.Time;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace DefaultNamespace.BulletComponents
+namespace CrazyPandaTestTask.BulletComponents
 {
 	public class ColorTimeScaleView : MonoBehaviour
 	{

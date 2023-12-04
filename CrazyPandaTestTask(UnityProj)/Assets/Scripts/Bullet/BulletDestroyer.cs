@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace CrazyPandaTestTask.Bullet
 {
 	public class BulletDestroyer : MonoBehaviour
 	{

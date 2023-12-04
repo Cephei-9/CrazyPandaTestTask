@@ -1,9 +1,9 @@
 using System;
 using System.Threading.Tasks;
-using CrazyPandaTestTask;
+using CrazyPandaTestTask.Time;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace CrazyPandaTestTask.Bullet
 {
 	public interface IInitializeBullet<TData> : IBullet
 	{

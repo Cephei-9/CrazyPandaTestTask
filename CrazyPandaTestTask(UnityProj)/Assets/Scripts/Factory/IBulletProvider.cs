@@ -1,6 +1,7 @@
 using System;
+using CrazyPandaTestTask.Bullet;
 
-namespace DefaultNamespace.Factory
+namespace CrazyPandaTestTask.Factory
 {
 	public interface IBulletProvider<TBullet>
 	{

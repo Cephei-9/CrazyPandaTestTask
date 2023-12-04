@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
-using DefaultNamespace.Runtime;
 using UnityEngine;
 
-namespace CrazyPandaTestTask
+namespace CrazyPandaTestTask.Tools
 {
 	public static class Extensions
 	{

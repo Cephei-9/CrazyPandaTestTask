@@ -1,6 +1,6 @@
-using UnityEngine.Serialization;
+using CrazyPandaTestTask.Bullet;
 
-namespace DefaultNamespace.UI
+namespace CrazyPandaTestTask.UI
 {
 	public interface IBulletSelectorView
 	{

@@ -1,9 +1,9 @@
 using System;
+using CrazyPandaTestTask.Bullet;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-namespace DefaultNamespace.UI
+namespace CrazyPandaTestTask.UI
 {
 	public class BulletSelectorView : MonoBehaviour, IBulletSelectorView
 	{

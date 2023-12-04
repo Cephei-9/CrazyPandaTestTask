@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CrazyPandaTestTask
+namespace CrazyPandaTestTask.ChronoArea
 {
 	public class ChronoAreaProvider
 	{

@@ -1,8 +1,9 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Range = CrazyPandaTestTask.Tools.Range;
 
-namespace DefaultNamespace.UI
+namespace CrazyPandaTestTask.UI
 {
 	public class TimeScaleSlider : MonoBehaviour, ITimeScaleView
 	{

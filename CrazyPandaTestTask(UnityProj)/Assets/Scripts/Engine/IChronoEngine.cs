@@ -1,8 +1,7 @@
 using System;
-using CrazyPandaTestTask;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace CrazyPandaTestTask.Engine
 {
 	public interface IChronoEngine
 	{

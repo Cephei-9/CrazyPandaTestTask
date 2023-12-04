@@ -1,6 +1,4 @@
-using System;
-
-namespace CrazyPandaTestTask
+namespace CrazyPandaTestTask.Time
 {
 	public class TimeProviderDecorator : TimeProviderDecoratorBase, IWritableTimeProvider
 	{

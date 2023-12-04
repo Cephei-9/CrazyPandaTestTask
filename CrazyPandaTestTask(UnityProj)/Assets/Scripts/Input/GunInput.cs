@@ -1,4 +1,4 @@
-namespace DefaultNamespace
+namespace CrazyPandaTestTask.Input
 {
 	public class GunInput
 	{

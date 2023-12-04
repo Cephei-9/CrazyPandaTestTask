@@ -1,7 +1,8 @@
 using System;
+using CrazyPandaTestTask.Bullet;
 using UnityEngine;
 
-namespace DefaultNamespace.Factory
+namespace CrazyPandaTestTask.Factory
 {
 	[CreateAssetMenu(fileName = "BulletConfig", menuName = "BulletConfig", order = 51)]
 	public class BulletConfigs : ScriptableObject

@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Threading.Tasks;
-using CrazyPandaTestTask;
+using CrazyPandaTestTask.Time;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace CrazyPandaTestTask.Bullet
 {
 	public class TestBulletView : BulletViewBase
 	{

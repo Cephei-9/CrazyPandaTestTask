@@ -1,9 +1,10 @@
-using CrazyPandaTestTask;
-using DefaultNamespace.BulletComponents;
-using DefaultNamespace.Engine;
+using CrazyPandaTestTask.BulletComponents;
+using CrazyPandaTestTask.ChronoArea;
+using CrazyPandaTestTask.Engine;
+using CrazyPandaTestTask.Time;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace CrazyPandaTestTask.Bullet
 {
 	public class GhostBullet : BulletBase<BulletData>
 	{

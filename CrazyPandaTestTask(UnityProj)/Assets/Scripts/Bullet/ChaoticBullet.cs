@@ -1,10 +1,12 @@
 using System;
-using CrazyPandaTestTask;
-using DefaultNamespace.BulletComponents;
-using DefaultNamespace.Runtime;
+using CrazyPandaTestTask.BulletComponents;
+using CrazyPandaTestTask.ChronoArea;
+using CrazyPandaTestTask.Engine;
+using CrazyPandaTestTask.Time;
+using CrazyPandaTestTask.Tools;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace CrazyPandaTestTask.Bullet
 {
 	// I did a nice bullet refactoring here
 	
