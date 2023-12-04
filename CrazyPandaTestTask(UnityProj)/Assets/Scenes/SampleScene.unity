@@ -1231,7 +1231,7 @@ MonoBehaviour:
   AreaSwitcher: {fileID: 1189224266}
   MainTimeScaleSlider: {fileID: 1643712756}
   MainTimeScaleRange:
-    Min: 0
+    Min: 0.1
     Max: 2
   LeftGunConfig:
     GunData:

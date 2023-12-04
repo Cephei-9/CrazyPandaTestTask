@@ -4,15 +4,22 @@ using CrazyPandaTestTask.Input;
 using CrazyPandaTestTask.Time;
 using CrazyPandaTestTask.UI;
 using UnityEngine;
+using Range = CrazyPandaTestTask.Tools.Range;
 
 namespace CrazyPandaTestTask.Game
 {
 	public class Game : MonoBehaviour
 	{
+		private const float START_GAME_TIME_SCALE = 1;
+		
 		[SerializeField]
 		private BulletConfigs BulletConfigs;
 		[SerializeField]
 		private AreaSwitcher AreaSwitcher;
+		[SerializeField]
+		private TimeScaleSlider MainTimeScaleSlider;
+		[SerializeField]
+		private Range MainTimeScaleRange = new(0, 2);
 
 		[SerializeField]
 		private GunConfig LeftGunConfig;
@@ -26,11 +33,15 @@ namespace CrazyPandaTestTask.Game
 			_input = new StandAloneInput();
 			TestFactory factory = new TestFactory(BulletConfigs);
 
-			ITimeProvider timeProvider = ITimeProvider.Default;
-			LeftGunConfig.Init(timeProvider, _input.LeftGunInput, factory);
-			RightGunConfig.Init(timeProvider, _input.RightGunInput, factory);
+			TimeProviderDecorator mainProvider = new TimeProviderDecorator(ITimeProvider.Default);
+
+			LeftGunConfig.Init(mainProvider, _input.LeftGunInput, factory);
+			RightGunConfig.Init(mainProvider, _input.RightGunInput, factory);
 			
 			AreaSwitcher.Init(_input.AreaChangeInput);
+			
+			MainTimeScaleSlider.Init(MainTimeScaleRange, START_GAME_TIME_SCALE);
+			MainTimeScaleSlider.ChangeInputEvent += (t) => mainProvider.ChangeTimeScale(t);
 		}
 
 		private void Update()
