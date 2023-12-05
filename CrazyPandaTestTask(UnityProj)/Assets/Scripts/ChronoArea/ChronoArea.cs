@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using CrazyPandaTestTask.Time;
 using CrazyPandaTestTask.Tools;
 using UnityEngine;
 
@@ -69,9 +68,8 @@ namespace CrazyPandaTestTask.ChronoArea
 
 		private void CalculateObjectScale(IChronoObject chronoObject, ChronoAreaProvider provider)
 		{
-			float sqrDistanceToObject = (chronoObject.Position - (Vector2)transform.position).sqrMagnitude;
-			float sqrDistance = Distance * Distance;
-			float positionInsideArea = Mathf.InverseLerp(0, sqrDistance, sqrDistanceToObject);
+			float distanceToObject = (chronoObject.Position - (Vector2)transform.position).magnitude;
+			float positionInsideArea = Mathf.InverseLerp(0, Distance, distanceToObject);
 
 			float curveFactor = Curve.Evaluate(positionInsideArea);
 			float newScale = TimeWrapRange.Lerp(curveFactor);

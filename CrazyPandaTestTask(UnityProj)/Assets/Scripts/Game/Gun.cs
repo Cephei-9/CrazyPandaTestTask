@@ -7,7 +7,7 @@ using CrazyPandaTestTask.UI;
 using UnityEngine;
 using Range = CrazyPandaTestTask.Tools.Range;
 
-namespace CrazyPandaTestTask.Gun
+namespace CrazyPandaTestTask.Game
 {
 	public class Gun : MonoBehaviour
 	{

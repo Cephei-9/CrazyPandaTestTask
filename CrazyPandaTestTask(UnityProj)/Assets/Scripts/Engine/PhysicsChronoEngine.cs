@@ -6,6 +6,8 @@ namespace CrazyPandaTestTask.Engine
 {
 	public class PhysicsChronoEngine : ChronoEngineBase, IFixedUpdatable
 	{
+		private const float MAX_RB_MASS = float.MaxValue;
+		
 		private Rigidbody2D _rb;
 		private float _startMass;
 		
@@ -39,8 +41,13 @@ namespace CrazyPandaTestTask.Engine
 
 		private void ApplyVelocity()
 		{
+			float clampedTimeScale = Mathf.Max(_targetProvider.TimeScale, Mathf.Epsilon);
+
+			float timeScaledMass = _startMass / clampedTimeScale;
+			float clampedMass = Mathf.Min(timeScaledMass, MAX_RB_MASS);
+
 			_rb.velocity = Velocity * _targetProvider.TimeScale;
-			_rb.mass = Mathf.Sqrt(_startMass / _targetProvider.TimeScale);
+			_rb.mass = Mathf.Sqrt(clampedMass);
 		}
 
 		public override void AddForce(Vector2 force, ForceMode forceMode = ForceMode.Force)

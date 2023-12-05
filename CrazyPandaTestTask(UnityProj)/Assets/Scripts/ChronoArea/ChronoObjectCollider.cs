@@ -1,13 +1,12 @@
-using CrazyPandaTestTask.ChronoArea;
 using UnityEngine;
 
-namespace CrazyPandaTestTask.Time
+namespace CrazyPandaTestTask.ChronoArea
 {
 	// This class is just a view for the real implementation. This way bullets can use IChronoObject chains and configure
 	// this in Bullet, and true implementations get to inherit from classes
 	public class ChronoObjectCollider : MonoBehaviour, IChronoObject
 	{
-		public Vector2 Position => transform.position;
+		public Vector2 Position => _originChronoObject.Position;
 
 		public IChronoObject _originChronoObject;
 

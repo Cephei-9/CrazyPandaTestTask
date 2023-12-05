@@ -1,4 +1,5 @@
-using CrazyPandaTestTask.BulletComponents;
+using System.Threading.Tasks;
+using CrazyPandaTestTask.Bullet.BulletComponents;
 using CrazyPandaTestTask.ChronoArea;
 using CrazyPandaTestTask.Engine;
 using CrazyPandaTestTask.Time;
@@ -36,6 +37,13 @@ namespace CrazyPandaTestTask.Bullet
 			};
 			
 			base.Shoot(velocity, timeProvider);
+		}
+
+		public override Task DestroyBullet()
+		{
+			// Need to add functionality to turn off Engine
+			_engine.Velocity = Vector2.zero;
+			return base.DestroyBullet();
 		}
 
 		private void Update()

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CrazyPandaTestTask.Bullet.View;
 using CrazyPandaTestTask.Time;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ namespace CrazyPandaTestTask.Bullet
 {
 	public abstract class BulletBase<TData> : MonoBehaviour, IInitializeBullet<TData>
 	{
+		private const float DESTROY_DEADLINE = 10;
+		
 		[SerializeField]
 		private BulletViewBase[] Views;
 		
@@ -54,8 +57,11 @@ namespace CrazyPandaTestTask.Bullet
 			_beginDestroy = true;
 			
 			IEnumerable<Task> viewsDestroyTasks = Views.Select(v => v.Destroy());
-			await Task.WhenAll(viewsDestroyTasks);
-			
+			Task bulletDestroy = Task.WhenAll(viewsDestroyTasks);
+			Task destroyDeadline = Task.Delay((int)(DESTROY_DEADLINE * 1000));
+
+			await Task.WhenAny(bulletDestroy, destroyDeadline);
+
 			InvokeDestroyEvent();
 		}
 

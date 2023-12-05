@@ -32,7 +32,7 @@ namespace CrazyPandaTestTask.Game
 		private void Start()
 		{
 			TestFactory factory = new(BulletConfigs);
-			TimeProviderDecorator mainProvider = new(ITimeProvider.Default);
+			IWritableTimeProvider mainProvider = IWritableTimeProvider.Main;
 			
 			InitInput();
 			InitAreaSwitcher();
@@ -70,10 +70,10 @@ namespace CrazyPandaTestTask.Game
 		[Serializable]
 		private class GunConfig
 		{
-			public Gun.Gun.Data GunData;
+			public Gun.Data GunData;
 			public TimeScaleSlider TimeScaleSlider;
 			public BulletSelectorView BulletSelectorView;
-			public Gun.Gun Gun;
+			public Gun Gun;
 
 			public void Init(ITimeProvider originProvider, GunInput input, IBulletFactory factory)
 			{

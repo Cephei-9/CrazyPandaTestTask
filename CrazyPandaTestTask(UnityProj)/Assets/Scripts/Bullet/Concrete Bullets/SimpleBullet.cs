@@ -1,4 +1,3 @@
-using System;
 using CrazyPandaTestTask.ChronoArea;
 using CrazyPandaTestTask.Engine;
 using CrazyPandaTestTask.Time;
@@ -24,7 +23,7 @@ namespace CrazyPandaTestTask.Bullet
 			_engine = new PhysicsChronoEngine(_chronoObject, timeProvider, _data.EngineData, rb);
 			_engine.AddChronoForce(velocity * _data.ShootVelocityMultiply, ForceMode.VelocityChange);
 			
-			base.Shoot(velocity, timeProvider);
+			base.Shoot(velocity, _chronoObject);
 		}
 
 		protected override void OnBulletCollision(Collision2D col)

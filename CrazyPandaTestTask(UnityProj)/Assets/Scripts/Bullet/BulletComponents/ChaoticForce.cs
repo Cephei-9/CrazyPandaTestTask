@@ -6,7 +6,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 using Range = CrazyPandaTestTask.Tools.Range;
 
-namespace CrazyPandaTestTask.BulletComponents
+namespace CrazyPandaTestTask.Bullet.BulletComponents
 {
 	// Class can work with any Engin implementation. This is where the meaning of making the engine an abstraction is revealed
 	

@@ -1,5 +1,5 @@
 using System;
-using CrazyPandaTestTask.BulletComponents;
+using CrazyPandaTestTask.Bullet.BulletComponents;
 using CrazyPandaTestTask.ChronoArea;
 using CrazyPandaTestTask.Engine;
 using CrazyPandaTestTask.Time;

@@ -25,7 +25,7 @@ namespace CrazyPandaTestTask.Time
 
 		protected virtual void OnOriginChangeTimeScaleEvent(float previousScale, float newScale)
 		{
-			InvokeChangeTimeScaleEvent(previousScale, newScale);
+			InvokeChangeTimeScaleEvent(previousScale * DecoratorScale, TimeScale);
 		}
 	}
 }

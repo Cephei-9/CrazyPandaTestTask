@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using CrazyPandaTestTask.Time;
 using UnityEngine;
 
-namespace CrazyPandaTestTask.Bullet
+namespace CrazyPandaTestTask.Bullet.View
 {
 	public class TestBulletView : BulletViewBase
 	{

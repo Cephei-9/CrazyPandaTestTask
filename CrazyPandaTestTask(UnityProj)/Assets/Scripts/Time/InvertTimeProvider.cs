@@ -24,6 +24,7 @@ namespace CrazyPandaTestTask.Time
 		protected override void OnOriginChangeTimeScaleEvent(float previousScale, float newScale)
 		{
 			InvertTime(newScale);
+			base.OnOriginChangeTimeScaleEvent(previousScale, newScale);
 		}
 
 		private void InvertTime(float timeScale)

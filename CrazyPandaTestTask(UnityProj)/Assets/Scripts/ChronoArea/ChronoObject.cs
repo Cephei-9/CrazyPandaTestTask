@@ -19,6 +19,7 @@ namespace CrazyPandaTestTask.ChronoArea
 			_transform = transform;
 			OriginProvider = originProvider;
 			_areaProviders = new List<ChronoAreaProvider>();
+			OriginProvider.ChangeTimeScaleEvent += OnOriginChangeTimeScaleEvent;
 			
 			UpdateTimeScale(1);
 		}

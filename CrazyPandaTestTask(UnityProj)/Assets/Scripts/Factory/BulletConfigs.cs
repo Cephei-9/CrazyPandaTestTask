@@ -4,6 +4,8 @@ using UnityEngine;
 
 namespace CrazyPandaTestTask.Factory
 {
+	// It's not a great solution but the code is fun
+	
 	[CreateAssetMenu(fileName = "BulletConfig", menuName = "BulletConfig", order = 51)]
 	public class BulletConfigs : ScriptableObject
 	{
