@@ -178,7 +178,7 @@ Transform:
   m_GameObject: {fileID: 54465366}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -4.95, z: 0}
-  m_LocalScale: {x: 20, y: 1, z: 1}
+  m_LocalScale: {x: 20, y: 3.1625, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1010334267}
@@ -1012,7 +1012,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: d3bbeedfcf1caa0438fb966bc5e077f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1096,7 +1096,7 @@ Transform:
   m_GameObject: {fileID: 1010334266}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.025, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 54465367}
@@ -1216,7 +1216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9656bcca16a949b3a0ade94dc3be2515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartRightIndex: 1
+  StartRightIndex: 2
   StartLeftIndex: 0
   LeftAreas:
   - {fileID: 1865466785912851200}
