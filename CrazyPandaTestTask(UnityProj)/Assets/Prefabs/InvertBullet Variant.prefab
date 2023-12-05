@@ -89,7 +89,7 @@ MonoBehaviour:
   Views:
   - {fileID: 5403032833186135395}
   - {fileID: 3637487858487290352}
-  ChronoObject: {fileID: 5751608241322054629}
+  ChronoCollider: {fileID: 5175476457403722833}
   TimeScaleView: {fileID: 1518860232}
 --- !u!212 &1336907717961919675 stripped
 SpriteRenderer:
@@ -107,6 +107,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700a707425be44258ae50c4719664925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5175476457403722833 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4256399460352957730, guid: 0cfe152c4a4ab5348b99d46c193fcc1d, type: 3}
+  m_PrefabInstance: {fileID: 8990091578763817331}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037512753644090587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fb3d35896d04c0baa50141a4d592ae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5403032833186135395 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3906966225185819664, guid: 0cfe152c4a4ab5348b99d46c193fcc1d, type: 3}
@@ -116,17 +127,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 700a707425be44258ae50c4719664925, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5751608241322054629 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3680260650556678806, guid: 0cfe152c4a4ab5348b99d46c193fcc1d, type: 3}
-  m_PrefabInstance: {fileID: 8990091578763817331}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037512753644090587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b44776a4fcfe404d93be5f72dcd9790d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6247155243014568214 stripped

@@ -69,15 +69,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cfe152c4a4ab5348b99d46c193fcc1d, type: 3}
---- !u!114 &663614321975655357 stripped
+--- !u!114 &87412169448064009 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3680260650556678806, guid: 0cfe152c4a4ab5348b99d46c193fcc1d, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4256399460352957730, guid: 0cfe152c4a4ab5348b99d46c193fcc1d, type: 3}
   m_PrefabInstance: {fileID: 4190397304936536363}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5224611899331124355}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b44776a4fcfe404d93be5f72dcd9790d, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fb3d35896d04c0baa50141a4d592ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &873448950598292795 stripped
@@ -111,7 +111,7 @@ MonoBehaviour:
   Views:
   - {fileID: 873448950598292795}
   - {fileID: 8403298412621185448}
-  ChronoObject: {fileID: 663614321975655357}
+  ChronoCollider: {fileID: 87412169448064009}
 --- !u!114 &8403298412621185448 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5672788713963051139, guid: 0cfe152c4a4ab5348b99d46c193fcc1d, type: 3}

@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8261507114155247016, guid: 0cfe152c4a4ab5348b99d46c193fcc1d, type: 3}
       propertyPath: m_Name
-      value: GhostBullet
+      value: GhostBullet Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cfe152c4a4ab5348b99d46c193fcc1d, type: 3}
@@ -127,17 +127,6 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   WorkMode: 0
   SpriteRenderer: {fileID: 5526466778602402646}
---- !u!114 &1291832728110173192 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3680260650556678806, guid: 0cfe152c4a4ab5348b99d46c193fcc1d, type: 3}
-  m_PrefabInstance: {fileID: 2521851506705854110}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5789850555277536054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b44776a4fcfe404d93be5f72dcd9790d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1497235226300654222 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3906966225185819664, guid: 0cfe152c4a4ab5348b99d46c193fcc1d, type: 3}
@@ -147,6 +136,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 700a707425be44258ae50c4719664925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1868622586271560636 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4256399460352957730, guid: 0cfe152c4a4ab5348b99d46c193fcc1d, type: 3}
+  m_PrefabInstance: {fileID: 2521851506705854110}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5789850555277536054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fb3d35896d04c0baa50141a4d592ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &5526466778602402646 stripped
@@ -174,7 +174,7 @@ MonoBehaviour:
   Views:
   - {fileID: 1497235226300654222}
   - {fileID: 7802101328131438109}
-  ChronoObject: {fileID: 1291832728110173192}
+  ChronoCollider: {fileID: 1868622586271560636}
   TimeScaleView: {fileID: 8722712549847699773}
 --- !u!114 &7802101328131438109 stripped
 MonoBehaviour:
