@@ -36,7 +36,7 @@ namespace CrazyPandaTestTask.Bullet
 				_engine
 			};
 			
-			base.Shoot(velocity, timeProvider);
+			base.Shoot(velocity, _chronoObject);
 		}
 
 		public override Task DestroyBullet()

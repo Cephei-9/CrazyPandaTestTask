@@ -37,7 +37,7 @@ namespace CrazyPandaTestTask.Bullet
 			InitChaotic();
 			InitUpdatable();
 			
-			base.Shoot(velocity, timeProvider);
+			base.Shoot(velocity, _chronoObject);
 		}
 
 		// Just to show how it should work with a large number of components

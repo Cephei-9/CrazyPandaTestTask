@@ -24,10 +24,22 @@ namespace CrazyPandaTestTask.Bullet.BulletComponents
 		[Space]
 		[SerializeField]
 		private SpriteRenderer SpriteRenderer;
+		
+		private ITimeProvider _timeProvider;
+		private Color _startColor;
 
 		public void Init(ITimeProvider timeProvider)
 		{
-			timeProvider.ChangeTimeScaleEvent += OnChangeTimeScale;
+			_timeProvider = timeProvider;
+			_startColor = SpriteRenderer.color;
+			
+			_timeProvider.ChangeTimeScaleEvent += OnChangeTimeScale;
+		}
+
+		private void OnDestroy()
+		{
+			if(_timeProvider != null)
+				_timeProvider.ChangeTimeScaleEvent -= OnChangeTimeScale;
 		}
 
 		private void OnChangeTimeScale(float previousTimeScale, float newTimeScale)
@@ -46,10 +58,10 @@ namespace CrazyPandaTestTask.Bullet.BulletComponents
 					SpriteRenderer.color = color;
 					break;
 				case ColorWorkMode.Additive:
-					SpriteRenderer.color += color;
+					SpriteRenderer.color = _startColor + color;
 					break;
 				case ColorWorkMode.Multiply:
-					SpriteRenderer.color *= color;
+					SpriteRenderer.color = _startColor * color;
 					break;
 				default:
 					throw new ArgumentOutOfRangeException();
