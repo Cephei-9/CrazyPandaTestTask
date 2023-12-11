@@ -11,7 +11,7 @@ namespace CrazyPandaTestTask.Engine
 		private Rigidbody2D _rb;
 		private float _startMass;
 		
-		private new float _previousTimeScale;
+		private float _previousTimeScale;
 
 		public override Vector2 Velocity { get; set; }
 
@@ -42,7 +42,7 @@ namespace CrazyPandaTestTask.Engine
 		private void ApplyVelocity()
 		{
 			float clampedTimeScale = Mathf.Max(_targetProvider.TimeScale, Mathf.Epsilon);
-			float timeScaledMass = _startMass / Mathf.Sqrt(clampedTimeScale);
+			float timeScaledMass = _startMass / clampedTimeScale;
 			float clampedMass = Mathf.Min(timeScaledMass, MAX_RB_MASS);
    
    			_rb.mass = clampedMass;
