@@ -1,5 +1,6 @@
 using CrazyPandaTestTask.Input;
 using UnityEngine;
+using Zenject;
 
 namespace CrazyPandaTestTask.Game
 {
@@ -24,9 +25,10 @@ namespace CrazyPandaTestTask.Game
 			_rightAreas = new AreasList(RightAreas, StartRightIndex);
 		}
 
-		public void Init(AreaChangeInput input)
+		[Inject]
+		public void Construct(IInput input)
 		{
-			_input = input;
+			_input = input.AreaChangeInput;
 		}
 
 		private void Update()

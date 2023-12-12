@@ -1,12 +1,13 @@
 using CrazyPandaTestTask.Tools;
 using UnityEngine;
+using Zenject;
 
 namespace CrazyPandaTestTask.Input
 {
 	// The input should operate not a bool but a button with different types of presses, and of course the input should
 	// be multilayered from the lower view layers to the upper layers defining the logic of the input and the implementation
 
-	public class StandAloneInput : IInput, IUpdatable
+	public class StandAloneInput : IInput, ITickable
 	{
 		public GunInput RightGunInput { get; }
 		public GunInput LeftGunInput { get; }
@@ -19,7 +20,7 @@ namespace CrazyPandaTestTask.Input
 			AreaChangeInput = new AreaChangeInput();
 		}
 
-		public void UpdateWork()
+		public void Tick()
 		{
 			if (HandleAreaInput())
 				return;
