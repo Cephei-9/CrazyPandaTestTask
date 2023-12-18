@@ -14,7 +14,7 @@ namespace CrazyPandaTestTask.Game
 		[Serializable]
 		public class Data
 		{
-			public Range TimeScaleRange = new Range(0.5f, 2);
+			public Range TimeScaleRange = new(0.5f, 2);
 			public float Force = 10;
 		}
 		

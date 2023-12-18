@@ -1,4 +1,8 @@
+using System;
+using Chrono;
+using CrazyPandaTestTask.Factory;
 using CrazyPandaTestTask.Input;
+using Infrostructure;
 using UnityEngine;
 using Zenject;
 
@@ -6,29 +10,31 @@ namespace CrazyPandaTestTask.Game
 {
 	public class AreaSwitcher : MonoBehaviour
 	{
+		[Serializable]
+		public class Data
+		{
+			public int StartRightIndex, StartLeftIndex;
+		}
+		
 		[SerializeField]
-		private int StartRightIndex, StartLeftIndex;
-		[Space]
+		private Transform LeftAreasRoot;
 		[SerializeField]
-		private ChronoArea.ChronoArea[] LeftAreas;
-		[SerializeField]
-		private ChronoArea.ChronoArea[] RightAreas;
+		private Transform RightAreasRoot;
 
 		private AreaChangeInput _input;
 
 		private AreasList _leftAreas;
 		private AreasList _rightAreas;
 
-		private void Awake()
-		{
-			_leftAreas = new AreasList(LeftAreas, StartLeftIndex);
-			_rightAreas = new AreasList(RightAreas, StartRightIndex);
-		}
+		private Data _data;
 
 		[Inject]
-		public void Construct(IInput input)
+		public void Construct(IInput input, IStaticData staticData, IAreaFactory areaFactory)
 		{
 			_input = input.AreaChangeInput;
+			_data = staticData.AreaSwitcherData;
+
+			CreateAreas(areaFactory);
 		}
 
 		private void Update()
@@ -40,13 +46,35 @@ namespace CrazyPandaTestTask.Game
 				_rightAreas.ActiveNext();
 		}
 
+		private void CreateAreas(IAreaFactory areaFactory)
+		{
+			IChronoArea[] leftAreas = CreateOneSideAreas(areaFactory, LeftAreasRoot);
+			_leftAreas = new AreasList(leftAreas, _data.StartLeftIndex);
+			
+			IChronoArea[] rightAreas = CreateOneSideAreas(areaFactory, RightAreasRoot);
+			_rightAreas = new AreasList(rightAreas, _data.StartRightIndex);
+		}
+
+		private static IChronoArea[] CreateOneSideAreas(IAreaFactory areaFactory, Transform sideTransform)
+		{
+			IChronoArea[] areas = new IChronoArea[(int)AreasType.Max];
+			InstantiateData instantiateData = new(sideTransform.position, Quaternion.identity, sideTransform);
+
+			for (int i = 0; i < (int)AreasType.Max; i++)
+			{
+				areas[i] = areaFactory.CreateArea((AreasType)i, instantiateData);
+			}
+
+			return areas;
+		}
+
 		private struct AreasList
 		{
-			private ChronoArea.ChronoArea[] _areas;
+			private readonly IChronoArea[] _areas;
 
 			private int _currentIndex;
 
-			public AreasList(ChronoArea.ChronoArea[] areas, int startIndex)
+			public AreasList(IChronoArea[] areas, int startIndex)
 			{
 				_areas = areas;
 				_currentIndex = Mathf.Clamp(startIndex, 0, _areas.Length);
@@ -67,20 +95,17 @@ namespace CrazyPandaTestTask.Game
 				ActiveCurrentArea(true);
 			}
 
-			private static void DeActiveAllAreas(ChronoArea.ChronoArea[] areas)
+			private static void DeActiveAllAreas(IChronoArea[] areas)
 			{
-				foreach (ChronoArea.ChronoArea chronoArea in areas)
+				foreach (IChronoArea chronoArea in areas)
 				{
-					chronoArea.DeActive();
+					chronoArea.SetActiveStatus(false);
 				}
 			}
 
 			private void ActiveCurrentArea(bool activeStatus)
 			{
-				if(activeStatus)
-					_areas[_currentIndex].Active();
-				else
-					_areas[_currentIndex].DeActive();
+				_areas[_currentIndex].SetActiveStatus(activeStatus);
 			}
 		}
 	}

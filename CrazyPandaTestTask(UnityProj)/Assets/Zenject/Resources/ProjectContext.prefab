@@ -75,3 +75,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletConfigs: {fileID: 11400000, guid: 79aa08289f2b4654db5ef17dab9c10b4, type: 2}
+  DataConfig: {fileID: 11400000, guid: 7d6c75e4ed851524f96b7a4688cc8481, type: 2}
+  AssetConfig: {fileID: 11400000, guid: 0876df962b51b304692ba4a84b0dddd9, type: 2}

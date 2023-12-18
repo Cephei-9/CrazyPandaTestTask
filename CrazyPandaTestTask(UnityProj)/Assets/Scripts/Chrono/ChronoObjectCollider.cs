@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CrazyPandaTestTask.ChronoArea
+namespace Chrono
 {
 	// This class is just a view for the real implementation. This way bullets can use IChronoObject chains and configure
 	// this in Bullet, and true implementations get to inherit from classes

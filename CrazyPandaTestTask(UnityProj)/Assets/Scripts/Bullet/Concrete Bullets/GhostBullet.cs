@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
+using Chrono;
 using CrazyPandaTestTask.Bullet.BulletComponents;
-using CrazyPandaTestTask.ChronoArea;
 using CrazyPandaTestTask.Engine;
 using CrazyPandaTestTask.Time;
 using CrazyPandaTestTask.Tools;

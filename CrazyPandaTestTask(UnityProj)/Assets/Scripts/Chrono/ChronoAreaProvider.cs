@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace CrazyPandaTestTask.ChronoArea
+namespace Chrono
 {
 	public class ChronoAreaProvider
 	{

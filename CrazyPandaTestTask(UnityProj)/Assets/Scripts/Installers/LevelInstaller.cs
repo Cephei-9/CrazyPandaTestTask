@@ -1,3 +1,4 @@
+using CrazyPandaTestTask.Factory;
 using CrazyPandaTestTask.Time;
 using CrazyPandaTestTask.Tools;
 using CrazyPandaTestTask.UI;
@@ -16,6 +17,12 @@ namespace Installers
 			BindTime();
 			BindTimeController();
 			BindTestPrefab();
+			BindAreasFactory();
+		}
+
+		private void BindAreasFactory()
+		{
+			Container.BindInterfacesTo<Factory>().AsSingle();
 		}
 
 		private void BindTimeController()

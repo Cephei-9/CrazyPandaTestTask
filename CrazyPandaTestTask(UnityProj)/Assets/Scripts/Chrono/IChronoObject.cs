@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CrazyPandaTestTask.ChronoArea
+namespace Chrono
 {
 	public interface IChronoObject
 	{

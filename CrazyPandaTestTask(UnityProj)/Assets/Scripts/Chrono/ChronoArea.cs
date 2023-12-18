@@ -1,30 +1,46 @@
+using System;
 using System.Collections.Generic;
-using CrazyPandaTestTask.Tools;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Range = CrazyPandaTestTask.Tools.Range;
 
-namespace CrazyPandaTestTask.ChronoArea
+namespace Chrono
 {
-	// In fact, with Area I did everything very simply. It would be good to allocate the interface of the area, maybe a
-	// base class, but somehow I didn't get to it
-	
-	public class ChronoArea : MonoBehaviour
+	public class ChronoArea : MonoBehaviour, IChronoArea
 	{
+		[Serializable]
+		public class Data
+		{
+			public AreaBlendMode BlendMode;
+			public Range TimeWrapRange;
+			public AnimationCurve Curve = AnimationCurve.Constant(0, 1, 1);
+			[FormerlySerializedAs("Distance")]
+			public float Radius = 1;
+			[Space]
+			// Of course the view settings should not be in Data but for simplicity I did it here instead of customizing it in the prefabs
+			public Color Color = Color.white;
+		}
+
 		[SerializeField]
-		private AreaBlendMode BlendMode;
-		[SerializeField]
-		private Range TimeWrapRange;
-		[SerializeField, Tooltip("A value of 0 corresponds to the center of the area, a value of 1 to its edge")]
-		private AnimationCurve Curve = AnimationCurve.Constant(0, 1, 1);
-		[SerializeField]
-		private float Distance = 1;
+		private SpriteRenderer Renderer;
+
+		private Data _data;
 		
 		private Dictionary<IChronoObject, ChronoAreaProvider> _chronoObjects = new();
+
+		public void InitData(Data data)
+		{
+			_data = data;
+			
+			Renderer.color = data.Color;
+			transform.localScale = Vector3.one * (data.Radius * 2);
+		}
 		
 		private void OnTriggerEnter2D(Collider2D other)
 		{
 			if (other.TryGetComponent(out IChronoObject chronoObject) && _chronoObjects.ContainsKey(chronoObject) == false)
 			{
-				ChronoAreaProvider provider = new(BlendMode);
+				ChronoAreaProvider provider = new(_data.BlendMode);
 				CalculateObjectScale(chronoObject, provider);
 				
 				_chronoObjects.Add(chronoObject, provider);
@@ -48,14 +64,9 @@ namespace CrazyPandaTestTask.ChronoArea
 			UpdateAllChronoObject();
 		}
 
-		public void Active()
+		public void SetActiveStatus(bool status)
 		{
-			gameObject.SetActive(true);
-		}
-
-		public void DeActive()
-		{
-			gameObject.SetActive(false);
+			gameObject.SetActive(status);
 		}
 
 		private void UpdateAllChronoObject()
@@ -69,10 +80,10 @@ namespace CrazyPandaTestTask.ChronoArea
 		private void CalculateObjectScale(IChronoObject chronoObject, ChronoAreaProvider provider)
 		{
 			float distanceToObject = (chronoObject.Position - (Vector2)transform.position).magnitude;
-			float positionInsideArea = Mathf.InverseLerp(0, Distance, distanceToObject);
+			float positionInsideArea = Mathf.InverseLerp(0, _data.Radius, distanceToObject);
 
-			float curveFactor = Curve.Evaluate(positionInsideArea);
-			float newScale = TimeWrapRange.Lerp(curveFactor);
+			float curveFactor = _data.Curve.Evaluate(positionInsideArea);
+			float newScale = _data.TimeWrapRange.Lerp(curveFactor);
 
 			provider.TimeWrapValue = newScale;
 		}
