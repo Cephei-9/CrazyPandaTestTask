@@ -1,10 +1,9 @@
+using Bullet;
 using Chrono;
-using CrazyPandaTestTask.Bullet;
-using CrazyPandaTestTask.Game;
-using CrazyPandaTestTask.Tools;
-using UnityEngine.Serialization;
+using Game;
+using Tools;
 
-namespace Infrostructure
+namespace Infrastructure.StaticData
 {
 	public interface IStaticData
 	{

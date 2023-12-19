@@ -1,15 +1,15 @@
 using UnityEngine;
 
-namespace CrazyPandaTestTask.Game
+namespace Game
 {
 	public class LevelContext : MonoBehaviour
 	{
 		[SerializeField]
-		private Gun _leftGun;
+		private Gun LeftGun;
 		[SerializeField]
-		private Gun _rightGun;
+		private Gun RightGun;
 
-		public Gun LeftGun => _leftGun;
-		public Gun RightGun => _rightGun;
+		public Gun GetLeftGun => LeftGun;
+		public Gun GetRightGun => RightGun;
 	}
 }

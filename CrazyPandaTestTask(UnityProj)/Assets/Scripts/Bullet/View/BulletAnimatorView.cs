@@ -1,9 +1,9 @@
 using System.Threading.Tasks;
-using CrazyPandaTestTask.Effects;
-using CrazyPandaTestTask.Time;
+using Effects;
+using Time.Infrastructure;
 using UnityEngine;
 
-namespace CrazyPandaTestTask.Bullet.View
+namespace Bullet.View
 {
 	public class BulletAnimatorView : BulletViewBase
 	{

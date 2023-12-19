@@ -1,7 +1,7 @@
-using CrazyPandaTestTask.Bullet;
+using Bullet;
 using UnityEngine;
 
-namespace CrazyPandaTestTask.Factory
+namespace Infrastructure.Factory
 {
 	public interface IBulletFactory
 	{

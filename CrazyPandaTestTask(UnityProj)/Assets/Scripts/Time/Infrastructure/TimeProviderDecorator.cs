@@ -1,4 +1,4 @@
-namespace CrazyPandaTestTask.Time
+namespace Time.Infrastructure
 {
 	public class TimeProviderDecorator : TimeProviderDecoratorBase, IWritableTimeProvider
 	{

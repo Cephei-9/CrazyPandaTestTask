@@ -1,4 +1,5 @@
-using CrazyPandaTestTask.Factory;
+using Infrastructure.AssetCofig;
+using UI.Window;
 using UnityEngine;
 
 namespace UI.Infrastructure

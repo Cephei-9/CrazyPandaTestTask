@@ -1,8 +1,8 @@
-using CrazyPandaTestTask.Game;
-using CrazyPandaTestTask.UI;
-using Installers;
+using Game;
+using Time;
+using UI.Elements;
 
-namespace UI
+namespace UI.Window
 {
 	public class HudController
 	{

@@ -1,9 +1,9 @@
 using System;
+using Time.Infrastructure;
 using UnityEngine;
-using UnityEngine.UIElements;
-using Range = CrazyPandaTestTask.Tools.Range;
+using Range = Tools.Range;
 
-namespace CrazyPandaTestTask.Time
+namespace Time
 {
 	public class InvertTimeProvider : TimeProviderDecoratorBase
 	{

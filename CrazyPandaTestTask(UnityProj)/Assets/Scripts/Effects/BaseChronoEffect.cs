@@ -1,6 +1,6 @@
-using CrazyPandaTestTask.Time;
+using Time.Infrastructure;
 
-namespace CrazyPandaTestTask.Effects
+namespace Effects
 {
 	// Base class that implements the logic of speed switching according to TimeProvider. It is suitable for Animator,
 	// AudioSource and ParticleSystem

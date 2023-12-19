@@ -1,8 +1,8 @@
 using System.Threading.Tasks;
-using CrazyPandaTestTask.Time;
+using Time.Infrastructure;
 using UnityEngine;
 
-namespace CrazyPandaTestTask.Bullet.View
+namespace Bullet.View
 {
 	// In reality, the Bulet View interface should be more complex and elaborate, there should be passed there what
 	// parameters, etc.

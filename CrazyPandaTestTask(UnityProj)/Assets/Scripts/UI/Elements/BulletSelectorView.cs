@@ -1,9 +1,9 @@
 using System;
-using CrazyPandaTestTask.Bullet;
+using Bullet;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CrazyPandaTestTask.UI
+namespace UI.Elements
 {
 	public class BulletSelectorView : MonoBehaviour
 	{

@@ -1,13 +1,12 @@
 using System;
-using CrazyPandaTestTask.Bullet;
-using CrazyPandaTestTask.Factory;
-using CrazyPandaTestTask.Input;
-using CrazyPandaTestTask.Time;
-using CrazyPandaTestTask.UI;
+using Bullet;
+using Infrastructure.Factory;
+using Input;
+using Time.Infrastructure;
 using UnityEngine;
-using Range = CrazyPandaTestTask.Tools.Range;
+using Range = Tools.Range;
 
-namespace CrazyPandaTestTask.Game
+namespace Game
 {
 	public class Gun : MonoBehaviour
 	{

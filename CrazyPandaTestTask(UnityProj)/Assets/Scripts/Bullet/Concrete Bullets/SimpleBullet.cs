@@ -1,9 +1,9 @@
 using Chrono;
-using CrazyPandaTestTask.Engine;
-using CrazyPandaTestTask.Time;
+using Engine;
+using Time.Infrastructure;
 using UnityEngine;
 
-namespace CrazyPandaTestTask.Bullet
+namespace Bullet
 {
 	[RequireComponent(typeof(Rigidbody2D))]
 	public class SimpleBullet : BulletBase<BulletData>

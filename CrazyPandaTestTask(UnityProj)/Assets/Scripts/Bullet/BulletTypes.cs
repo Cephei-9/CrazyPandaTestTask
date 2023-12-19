@@ -1,4 +1,4 @@
-namespace CrazyPandaTestTask.Bullet
+namespace Bullet
 {
 	public enum BulletType
 	{

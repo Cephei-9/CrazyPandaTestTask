@@ -1,11 +1,12 @@
 using System;
+using Bullet.BulletComponents;
 using Chrono;
-using CrazyPandaTestTask.Bullet.BulletComponents;
-using CrazyPandaTestTask.Engine;
-using CrazyPandaTestTask.Time;
+using Engine;
+using Time;
+using Time.Infrastructure;
 using UnityEngine;
 
-namespace CrazyPandaTestTask.Bullet
+namespace Bullet
 {
 	[RequireComponent(typeof(Rigidbody2D))]
 	public class InvertBullet : BulletBase<InvertBullet.Data>

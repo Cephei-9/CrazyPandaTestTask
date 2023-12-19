@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using CrazyPandaTestTask.Time;
-using CrazyPandaTestTask.Tools;
+using Time.Infrastructure;
+using Tools;
 using UnityEngine;
 
 namespace Chrono

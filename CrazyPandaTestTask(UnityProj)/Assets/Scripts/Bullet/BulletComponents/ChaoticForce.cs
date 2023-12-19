@@ -1,12 +1,12 @@
 using System;
-using CrazyPandaTestTask.Engine;
-using CrazyPandaTestTask.Time;
-using CrazyPandaTestTask.Tools;
+using Engine;
+using Time.Infrastructure;
+using Tools;
 using UnityEngine;
 using Random = UnityEngine.Random;
-using Range = CrazyPandaTestTask.Tools.Range;
+using Range = Tools.Range;
 
-namespace CrazyPandaTestTask.Bullet.BulletComponents
+namespace Bullet.BulletComponents
 {
 	// Class can work with any Engin implementation. This is where the meaning of making the engine an abstraction is revealed
 	

@@ -1,8 +1,6 @@
-using CrazyPandaTestTask.Factory;
-using CrazyPandaTestTask.Input;
-using Infrastructure;
-using Infrostructure;
-using UI;
+using Infrastructure.AssetCofig;
+using Infrastructure.StaticData;
+using Input;
 using UI.Infrastructure;
 using UnityEngine.SceneManagement;
 using Zenject;
@@ -13,15 +11,11 @@ namespace Installers
 	{
 		private const int NEXT_SCENE = 1;
 		
-		public BulletConfigs BulletConfigs;
-		
 		public DataConfig DataConfig;
 		public AssetConfig AssetConfig;
 
 		public override void InstallBindings()
 		{
-			BindTestFactory();
-			BindBulletConfigs();
 			BindStandAloneInput();
 			BindDataConfig();
 			BindAssetConfig();
@@ -33,16 +27,6 @@ namespace Installers
 		{
 			Container.BindInterfacesTo<UIFactory>().AsSingle();
 			Container.BindInterfacesTo<UIService>().AsSingle();
-		}
-
-		private void BindTestFactory()
-		{
-			Container.BindInterfacesTo<TestFactory>().AsSingle();
-		}
-
-		private void BindBulletConfigs()
-		{
-			Container.Bind<BulletConfigs>().FromInstance(BulletConfigs).AsSingle();
 		}
 
 		private void BindStandAloneInput()

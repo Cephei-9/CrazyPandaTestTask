@@ -1,6 +1,6 @@
 using System;
 
-namespace CrazyPandaTestTask.Time
+namespace Time.Infrastructure
 {
 	public abstract class TimeProviderDecoratorBase : ITimeProviderDecorator, IDisposable
 	{

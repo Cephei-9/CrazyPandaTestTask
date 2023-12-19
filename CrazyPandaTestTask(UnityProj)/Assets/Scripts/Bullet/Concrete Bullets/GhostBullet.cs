@@ -1,12 +1,12 @@
 using System.Threading.Tasks;
+using Bullet.BulletComponents;
 using Chrono;
-using CrazyPandaTestTask.Bullet.BulletComponents;
-using CrazyPandaTestTask.Engine;
-using CrazyPandaTestTask.Time;
-using CrazyPandaTestTask.Tools;
+using Engine;
+using Time.Infrastructure;
+using Tools;
 using UnityEngine;
 
-namespace CrazyPandaTestTask.Bullet
+namespace Bullet
 {
 	public class GhostBullet : BulletBase<BulletData>
 	{

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CrazyPandaTestTask.Bullet
+namespace Bullet
 {
 	public class BulletDestroyer : MonoBehaviour
 	{

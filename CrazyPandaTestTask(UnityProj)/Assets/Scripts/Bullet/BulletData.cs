@@ -1,7 +1,7 @@
 using System;
-using CrazyPandaTestTask.Engine;
+using Engine;
 
-namespace CrazyPandaTestTask.Bullet
+namespace Bullet
 {
 	[Serializable]
 	public class BulletData

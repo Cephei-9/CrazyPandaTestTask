@@ -1,7 +1,7 @@
-using CrazyPandaTestTask.Time;
+using Time.Infrastructure;
 using UnityEngine;
 
-namespace CrazyPandaTestTask.Engine
+namespace Engine
 {
 	// Нужен чтобы можно было использовать в инспекторе как базовый класс
 	public abstract class ChronoEngineBase : IChronoEngine

@@ -1,11 +1,12 @@
 using System;
+using Bullet;
 using Chrono;
-using CrazyPandaTestTask.Bullet;
-using Infrostructure;
+using Infrastructure.AssetCofig;
+using Infrastructure.StaticData;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace CrazyPandaTestTask.Factory
+namespace Infrastructure.Factory
 {
 	public class Factory : IAreaFactory
 	{

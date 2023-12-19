@@ -1,6 +1,6 @@
 using Chrono;
 
-namespace CrazyPandaTestTask.Factory
+namespace Infrastructure.Factory
 {
 	public interface IAreaFactory
 	{

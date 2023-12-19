@@ -1,7 +1,7 @@
-using CrazyPandaTestTask.Time;
+using Time.Infrastructure;
 using UnityEngine;
 
-namespace CrazyPandaTestTask.Effects
+namespace Effects
 {
 	public class ChronoAnimator : BaseChronoEffect
 	{

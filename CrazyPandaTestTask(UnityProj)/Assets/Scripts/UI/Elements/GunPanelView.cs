@@ -1,11 +1,9 @@
 using System;
-using CrazyPandaTestTask.Bullet;
-using CrazyPandaTestTask.UI;
+using Bullet;
 using UnityEngine;
-using UnityEngine.Serialization;
-using Range = CrazyPandaTestTask.Tools.Range;
+using Range = Tools.Range;
 
-namespace UI
+namespace UI.Elements
 {
 	public class GunPanelView : MonoBehaviour
 	{

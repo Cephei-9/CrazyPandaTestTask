@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
-using Range = CrazyPandaTestTask.Tools.Range;
+using Range = Tools.Range;
 
-namespace CrazyPandaTestTask.UI
+namespace UI.Elements
 {
 	public class TimeScaleView : MonoBehaviour
 	{

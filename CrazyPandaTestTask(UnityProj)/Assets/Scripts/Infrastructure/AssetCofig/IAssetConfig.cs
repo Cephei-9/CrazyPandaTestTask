@@ -1,9 +1,9 @@
+using Bullet;
 using Chrono;
-using CrazyPandaTestTask.Bullet;
-using UI;
+using UI.Window;
 using UnityEngine;
 
-namespace CrazyPandaTestTask.Factory
+namespace Infrastructure.AssetCofig
 {
 	public interface IAssetConfig
 	{

@@ -1,12 +1,9 @@
-using CrazyPandaTestTask.Factory;
-using CrazyPandaTestTask.Game;
-using CrazyPandaTestTask.Time;
-using CrazyPandaTestTask.Tools;
-using CrazyPandaTestTask.UI;
-using UI;
+using Game;
+using Infrastructure.Factory;
+using Time;
+using Time.Infrastructure;
 using UI.Infrastructure;
-using UnityEngine;
-using UnityEngine.Serialization;
+using UI.Window;
 using Zenject;
 
 namespace Installers
@@ -19,7 +16,7 @@ namespace Installers
 		{
 			BindTime();
 			BindTimeController();
-			BindAreasFactory();
+			BindFactory();
 			BindLevelContext();
 			BindUIControllers();
 		}
@@ -38,7 +35,7 @@ namespace Installers
 			Container.Bind<GunsProvider>().AsSingle();
 		}
 
-		private void BindAreasFactory()
+		private void BindFactory()
 		{
 			Container.BindInterfacesTo<Factory>().AsSingle();
 		}

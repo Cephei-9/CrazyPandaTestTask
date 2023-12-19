@@ -1,4 +1,4 @@
-namespace CrazyPandaTestTask.Tools
+namespace Tools
 {
 	public interface IUpdatable
 	{

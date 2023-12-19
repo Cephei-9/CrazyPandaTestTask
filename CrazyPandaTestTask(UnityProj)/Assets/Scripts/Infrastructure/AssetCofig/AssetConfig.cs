@@ -1,10 +1,9 @@
+using Bullet;
 using Chrono;
-using CrazyPandaTestTask.Bullet;
-using UI;
+using UI.Window;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace CrazyPandaTestTask.Factory
+namespace Infrastructure.AssetCofig
 {
 	[CreateAssetMenu(fileName = "AssetConfig", menuName = "GameData/AssetConfig")]
 	public class AssetConfig : ScriptableObject, IAssetConfig

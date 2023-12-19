@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CrazyPandaTestTask.Bullet.View;
-using CrazyPandaTestTask.Time;
+using Bullet.View;
+using Time.Infrastructure;
 using UnityEngine;
 
-namespace CrazyPandaTestTask.Bullet
+namespace Bullet
 {
 	public abstract class BulletBase<TData> : MonoBehaviour, IInitializeBullet<TData>
 	{

@@ -1,9 +1,9 @@
-using CrazyPandaTestTask.Factory;
-using CrazyPandaTestTask.Input;
-using CrazyPandaTestTask.Time;
-using Infrostructure;
+using Infrastructure.Factory;
+using Infrastructure.StaticData;
+using Input;
+using Time.Infrastructure;
 
-namespace CrazyPandaTestTask.Game
+namespace Game
 {
 	public class GunsProvider
 	{
@@ -12,8 +12,8 @@ namespace CrazyPandaTestTask.Game
 
 		public GunsProvider(LevelContext levelContext, IStaticData staticData, ITimeProvider mainTimeProvider, IInput input, IBulletFactory bulletFactory)
 		{
-			LeftGun = levelContext.LeftGun;
-			RightGun = levelContext.RightGun;
+			LeftGun = levelContext.GetLeftGun;
+			RightGun = levelContext.GetRightGun;
 			
 			RightGun.Init(staticData.GunData, mainTimeProvider, input.RightGunInput, bulletFactory);
 			LeftGun.Init(staticData.GunData, mainTimeProvider, input.LeftGunInput, bulletFactory);

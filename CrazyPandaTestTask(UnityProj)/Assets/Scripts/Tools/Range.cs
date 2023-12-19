@@ -1,9 +1,8 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace CrazyPandaTestTask.Tools
+namespace Tools
 {
 	[Serializable]
 	public class Range

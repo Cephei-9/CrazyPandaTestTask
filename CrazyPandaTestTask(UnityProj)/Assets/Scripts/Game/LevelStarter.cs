@@ -1,7 +1,7 @@
 using UI.Infrastructure;
 using Zenject;
 
-namespace CrazyPandaTestTask.Game
+namespace Game
 {
 	public class LevelStarter : IInitializable
 	{

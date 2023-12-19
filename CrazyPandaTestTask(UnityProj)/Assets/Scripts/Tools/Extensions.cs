@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CrazyPandaTestTask.Tools
+namespace Tools
 {
 	public static class Extensions
 	{

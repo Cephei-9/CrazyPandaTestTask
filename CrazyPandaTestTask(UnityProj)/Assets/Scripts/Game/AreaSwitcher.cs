@@ -1,12 +1,12 @@
 using System;
 using Chrono;
-using CrazyPandaTestTask.Factory;
-using CrazyPandaTestTask.Input;
-using Infrostructure;
+using Infrastructure.Factory;
+using Infrastructure.StaticData;
+using Input;
 using UnityEngine;
 using Zenject;
 
-namespace CrazyPandaTestTask.Game
+namespace Game
 {
 	public class AreaSwitcher : MonoBehaviour
 	{

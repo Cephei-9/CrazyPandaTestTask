@@ -1,8 +1,8 @@
-using CrazyPandaTestTask.Time;
-using CrazyPandaTestTask.Tools;
+using Time.Infrastructure;
+using Tools;
 using UnityEngine;
 
-namespace CrazyPandaTestTask.Engine
+namespace Engine
 {
 	public class PhysicsChronoEngine : ChronoEngineBase, IFixedUpdatable
 	{

@@ -1,6 +1,6 @@
 using System;
 
-namespace CrazyPandaTestTask.Time
+namespace Time.Infrastructure
 {
 	public class UnscaledTimeScaleProvider : ITimeProvider
 	{

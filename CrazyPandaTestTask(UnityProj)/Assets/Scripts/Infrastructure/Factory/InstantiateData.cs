@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CrazyPandaTestTask.Factory
+namespace Infrastructure.Factory
 {
 	public struct InstantiateData
 	{

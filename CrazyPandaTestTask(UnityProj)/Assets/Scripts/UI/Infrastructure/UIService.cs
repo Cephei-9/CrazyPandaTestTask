@@ -1,3 +1,5 @@
+using UI.Window;
+
 namespace UI.Infrastructure
 {
 	public class UIService : IUIService

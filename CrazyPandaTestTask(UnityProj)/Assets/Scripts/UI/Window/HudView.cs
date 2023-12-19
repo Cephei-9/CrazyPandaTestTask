@@ -1,8 +1,7 @@
-using CrazyPandaTestTask.UI;
+using UI.Elements;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace UI
+namespace UI.Window
 {
 	public class HudView : MonoBehaviour
 	{

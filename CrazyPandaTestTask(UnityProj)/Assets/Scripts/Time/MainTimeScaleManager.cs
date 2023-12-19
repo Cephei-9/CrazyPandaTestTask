@@ -1,10 +1,8 @@
-using CrazyPandaTestTask.Time;
-using CrazyPandaTestTask.Tools;
-using CrazyPandaTestTask.UI;
-using Infrostructure;
-using UnityEngine;
+using Infrastructure.StaticData;
+using Time.Infrastructure;
+using Tools;
 
-namespace Installers
+namespace Time
 {
 	public class MainTimeScaleManager
 	{

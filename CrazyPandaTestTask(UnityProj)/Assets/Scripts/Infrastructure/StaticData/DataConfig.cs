@@ -1,11 +1,10 @@
+using Bullet;
 using Chrono;
-using CrazyPandaTestTask.Bullet;
-using CrazyPandaTestTask.Game;
-using CrazyPandaTestTask.Tools;
-using Infrostructure;
+using Game;
+using Tools;
 using UnityEngine;
 
-namespace Infrastructure
+namespace Infrastructure.StaticData
 {
 	[CreateAssetMenu(fileName = "DataConfig", menuName = "GameData/DataConfig")]
 	public class DataConfig : ScriptableObject, IStaticData
