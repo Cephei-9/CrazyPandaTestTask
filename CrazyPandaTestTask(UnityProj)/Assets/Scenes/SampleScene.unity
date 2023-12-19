@@ -909,8 +909,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e60fbf5fdff442e68593c58ad4c88924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _leftGun: {fileID: 1935347511}
-  _rightGun: {fileID: 5398385244461549792}
+  LeftGun: {fileID: 1935347511}
+  RightGun: {fileID: 5398385244461549792}
 --- !u!1001 &1935347510
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ using Object = UnityEngine.Object;
 
 namespace Infrastructure.Factory
 {
-	public class Factory : IAreaFactory
+	public class Factory : IAreaFactory, IBulletFactory
 	{
 		private readonly IAssetConfig _assetConfig;
 		private readonly IStaticData _staticData;
