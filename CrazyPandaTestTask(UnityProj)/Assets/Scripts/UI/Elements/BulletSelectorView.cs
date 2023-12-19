@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace CrazyPandaTestTask.UI
 {
-	public class BulletSelectorView : MonoBehaviour, IBulletSelectorView
+	public class BulletSelectorView : MonoBehaviour
 	{
 		[SerializeField]
 		private Color SimpleBullet;

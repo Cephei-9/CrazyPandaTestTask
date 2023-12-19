@@ -148,8 +148,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -136}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: -166.7}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5227176213676183160
 CanvasRenderer:
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -302,8 +302,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchoredPosition: {x: 0, y: -30.700005}
+  m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5227176214042202816
 MonoBehaviour:
@@ -402,6 +402,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5227176214287692862}
+  - component: {fileID: 8612806583675940920}
   - component: {fileID: 5227176214287692856}
   - component: {fileID: 5227176214287692857}
   m_Layer: 5
@@ -420,8 +421,8 @@ RectTransform:
   m_GameObject: {fileID: 5227176214287692863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5227176214042202817}
   - {fileID: 5227176213676183166}
@@ -433,6 +434,20 @@ RectTransform:
   m_AnchoredPosition: {x: 50, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &8612806583675940920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5227176214287692863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c8e8ae64484fb9af262c8671984d82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeScaleView: {fileID: 5227176214287692856}
+  BulletSelectorView: {fileID: 5227176214287692857}
 --- !u!114 &5227176214287692856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,10 +473,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b53445fe124821b022fb32d14e20f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SimpleBullet: {fileID: 21300000, guid: 62ce01ddca719d34ea9648c586a7cc94, type: 3}
-  GhostBullet: {fileID: 21300000, guid: e92fc44f12c21dd44a49e390f39f7ffd, type: 3}
-  InvertBullet: {fileID: 21300000, guid: d4d64a6cd9624c34a815dd79fb2a20a4, type: 3}
-  ChaoticBullet: {fileID: 21300000, guid: 42f4b048501996743958df91513f824a, type: 3}
+  SimpleBullet: {r: 0.6901961, g: 0.6784314, b: 0.1254902, a: 1}
+  GhostBullet: {r: 0.1254902, g: 0.53333336, b: 0.6901961, a: 1}
+  InvertBullet: {r: 0.6901961, g: 0.1254902, b: 0.16862746, a: 1}
+  ChaoticBullet: {r: 0.41960788, g: 0.1254902, b: 0.6901961, a: 1}
   Image: {fileID: 5227176213676183161}
 --- !u!1 &5227176214328419557
 GameObject:

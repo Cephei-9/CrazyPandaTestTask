@@ -2,6 +2,8 @@ using CrazyPandaTestTask.Factory;
 using CrazyPandaTestTask.Input;
 using Infrastructure;
 using Infrostructure;
+using UI;
+using UI.Infrastructure;
 using UnityEngine.SceneManagement;
 using Zenject;
 
@@ -24,6 +26,13 @@ namespace Installers
 			BindDataConfig();
 			BindAssetConfig();
 			BindGameBootstrapInstaller();
+			BindUI();
+		}
+
+		private void BindUI()
+		{
+			Container.BindInterfacesTo<UIFactory>().AsSingle();
+			Container.BindInterfacesTo<UIService>().AsSingle();
 		}
 
 		private void BindTestFactory()

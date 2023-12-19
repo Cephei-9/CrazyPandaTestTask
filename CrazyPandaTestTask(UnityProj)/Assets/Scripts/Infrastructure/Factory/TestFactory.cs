@@ -1,5 +1,6 @@
 using System;
 using CrazyPandaTestTask.Bullet;
+using Infrostructure;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -10,11 +11,13 @@ namespace CrazyPandaTestTask.Factory
 	
 	public class TestFactory : IBulletFactory
 	{
-		private BulletConfigs _bulletConfigs;
+		private readonly IStaticData _staticData;
+		private readonly IAssetConfig _assetConfig;
 
-		public TestFactory(BulletConfigs bulletConfigs)
+		public TestFactory(IStaticData staticData, IAssetConfig assetConfig)
 		{
-			_bulletConfigs = bulletConfigs;
+			_staticData = staticData;
+			_assetConfig = assetConfig;
 		}
 
 		public IBullet GetBullet(BulletType type, Vector3 position, Quaternion rotation, Transform parent)
@@ -23,38 +26,24 @@ namespace CrazyPandaTestTask.Factory
 
 			return type switch
 			{
-				BulletType.Simple => CreateBullet(_bulletConfigs.SimpleBullet, instantiateData),
-				BulletType.Ghost => CreateBullet(_bulletConfigs.GhostBullet, instantiateData),
-				BulletType.Invert => CreateBullet(_bulletConfigs.InvertBullet, instantiateData),
-				BulletType.Chaotic => CreateBullet(_bulletConfigs.ChaoticBullet, instantiateData),
+				BulletType.Simple => CreateBullet(_assetConfig.SimpleBullet, _staticData.SimpleBulletData, instantiateData),
+				BulletType.Ghost => CreateBullet(_assetConfig.GhostBullet, _staticData.GhostBulletData, instantiateData),
+				BulletType.Invert => CreateBullet(_assetConfig.InvertBullet, _staticData.InvertBulletData, instantiateData),
+				BulletType.Chaotic => CreateBullet(_assetConfig.ChaoticBullet, _staticData.ChaoticBulletData, instantiateData),
 				_ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
 			};
 		}
 
-		private IBullet CreateBullet<TBullet, TData>(BulletConfig<TBullet, TData> config,
-			InstantiateData instantiateData) where TBullet : MonoBehaviour, IInitializeBullet<TData>
+		private IBullet CreateBullet<TBullet, TData>(TBullet prefab, TData bulletData, InstantiateData instantiateData) where TBullet : MonoBehaviour, IInitializeBullet<TData>
 		{
-			TBullet newBullet = Object.Instantiate(config.Prefab, instantiateData.Position, instantiateData.Rotation,
+			TBullet newBullet = Object.Instantiate(prefab, instantiateData.Position, instantiateData.Rotation,
 				instantiateData.Parent);
 			
-			newBullet.InitData(config.Data);
+			newBullet.InitData(bulletData);
+			// The right thing to do would be to use a pool
 			newBullet.DestroyEvent += () => Object.Destroy(newBullet.gameObject);
 
 			return newBullet;
-		}
-
-		private class InstantiateData
-		{
-			public readonly Transform Parent;
-			public readonly Vector3 Position;
-			public readonly Quaternion Rotation;
-
-			public InstantiateData(Vector3 position, Quaternion rotation, Transform parent)
-			{
-				Position = position;
-				Rotation = rotation;
-				Parent = parent;
-			}
 		}
 	}
 }

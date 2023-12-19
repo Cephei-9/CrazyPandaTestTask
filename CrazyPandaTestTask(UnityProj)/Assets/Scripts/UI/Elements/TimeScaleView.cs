@@ -5,7 +5,7 @@ using Range = CrazyPandaTestTask.Tools.Range;
 
 namespace CrazyPandaTestTask.UI
 {
-	public class TimeScaleSlider : MonoBehaviour, ITimeScaleView
+	public class TimeScaleView : MonoBehaviour
 	{
 		[SerializeField]
 		private Slider Slider;

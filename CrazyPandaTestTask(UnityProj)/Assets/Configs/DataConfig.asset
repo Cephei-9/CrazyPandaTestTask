@@ -41,7 +41,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    Distance: 2
+    Radius: 2
     Color: {r: 0.2627451, g: 0.5113027, b: 0.7176471, a: 0.7176471}
   SlowingDownDynamically:
     BlendMode: 0
@@ -72,7 +72,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    Distance: 3
+    Radius: 3
     Color: {r: 0.7176471, g: 0.5875089, b: 0.2627451, a: 0.7176471}
   AcceleratingDynamically:
     BlendMode: 1
@@ -103,7 +103,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    Distance: 2.5
+    Radius: 2.5
     Color: {r: 0.7176471, g: 0.2627451, b: 0.44900605, a: 0.7176471}
   AreaSwitcher:
     StartRightIndex: 2
@@ -112,7 +112,7 @@ MonoBehaviour:
     TimeScaleRange:
       Min: 0.001
       Max: 2
-    Force: 15
+    Force: 10
   MainTimeScale:
     Min: 0.001
     Max: 2
@@ -129,7 +129,11 @@ MonoBehaviour:
       Gravity: 1
       Drag: 0
     InvertData:
-      InvertFactor: 0.7
+      UseRoot: 1
+      InvertFactor: 1
+      MinMaxValue:
+        Min: 0
+        Max: 7
   GhostBullet:
     ShootVelocityMultiply: 0.8
     EngineData:

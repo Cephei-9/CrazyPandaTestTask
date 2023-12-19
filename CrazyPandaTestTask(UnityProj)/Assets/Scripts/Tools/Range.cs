@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -24,6 +25,11 @@ namespace CrazyPandaTestTask.Tools
 		public float Lerp(float t)
 		{
 			return Mathf.Lerp(Min, Max, t);
+		}
+
+		public float Clamp(float value)
+		{
+			return Mathf.Clamp(value, Min, Max);
 		}
 	}
 }

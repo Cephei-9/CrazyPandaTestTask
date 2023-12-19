@@ -1,23 +1,41 @@
 using CrazyPandaTestTask.Factory;
+using CrazyPandaTestTask.Game;
 using CrazyPandaTestTask.Time;
 using CrazyPandaTestTask.Tools;
 using CrazyPandaTestTask.UI;
+using UI;
+using UI.Infrastructure;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 namespace Installers
 {
 	public class LevelInstaller : MonoInstaller<LevelInstaller>
 	{
-		public TestZenjectPrefab TestPrefab;
-		public TimeScaleSlider TimeScaleSlider;
+		public LevelContext LevelContext;
 		
 		public override void InstallBindings()
 		{
 			BindTime();
 			BindTimeController();
-			BindTestPrefab();
 			BindAreasFactory();
+			BindLevelContext();
+			BindUIControllers();
+		}
+
+		private void BindUIControllers()
+		{
+			Container.Bind<HudController>().AsSingle();
+			
+			Container.BindInterfacesTo<UIControllersFactory>().AsSingle();
+		}
+		
+		private void BindLevelContext()
+		{
+			Container.Bind<LevelContext>().FromInstance(LevelContext);
+			Container.BindInterfacesTo<LevelStarter>().AsSingle().NonLazy();
+			Container.Bind<GunsProvider>().AsSingle();
 		}
 
 		private void BindAreasFactory()
@@ -27,23 +45,15 @@ namespace Installers
 
 		private void BindTimeController()
 		{
-			Container.BindInterfacesAndSelfTo<TimeScaleSlider>().FromInstance(TimeScaleSlider);
-			Container.Bind<MainTimeController>().AsSingle().WithArguments(new Range(0, 2)).NonLazy();
+			Container.Bind<MainTimeScaleManager>().AsSingle().NonLazy();
 		}
 
 		private void BindTime()
 		{
-			Container.Bind(typeof(ITimeProvider), typeof(IWritableTimeProvider)).To<TimeProviderDecorator>()
+			Container
+				.Bind(typeof(ITimeProvider), typeof(IWritableTimeProvider))
+				.To<TimeProviderDecorator>()
 				.FromInstance(IWritableTimeProvider.Main).AsSingle();
-		}
-
-		private void BindTestPrefab()
-		{
-			TestZenjectPrefab testZenject =
-				Container.InstantiatePrefabForComponent<TestZenjectPrefab>(TestPrefab, Vector3.zero,
-					Quaternion.identity, null);
-			
-			Container.Bind<TestZenjectPrefab>().FromInstance(testZenject).AsSingle();
 		}
 	}
 }
