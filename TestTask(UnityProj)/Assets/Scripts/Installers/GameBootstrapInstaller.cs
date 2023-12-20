@@ -1,3 +1,4 @@
+using Game;
 using Infrastructure.AssetCofig;
 using Infrastructure.StaticData;
 using Input;
@@ -21,6 +22,8 @@ namespace Installers
 			BindAssetConfig();
 			BindGameBootstrapInstaller();
 			BindUI();
+
+			GameRunner.IsInit = true;
 		}
 
 		private void BindUI()
