@@ -2,6 +2,9 @@ using UI.Window;
 
 namespace UI.Infrastructure
 {
+	// Access service to control UI things (windows, popups, elements and other). This is the place in which to
+	// encapsulate complex UI logic
+	
 	public class UIService : IUIService
 	{
 		private readonly IUIFactory _uiFactory;

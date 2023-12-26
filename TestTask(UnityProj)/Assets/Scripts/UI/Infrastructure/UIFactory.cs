@@ -4,6 +4,8 @@ using UnityEngine;
 
 namespace UI.Infrastructure
 {
+	// View objects factory
+	
 	public class UIFactory : IUIFactory
 	{
 		private readonly IAssetConfig _assetConfig;
