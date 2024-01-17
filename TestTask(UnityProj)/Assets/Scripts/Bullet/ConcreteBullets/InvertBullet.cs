@@ -6,7 +6,7 @@ using Time;
 using Time.Infrastructure;
 using UnityEngine;
 
-namespace Bullet
+namespace Bullet.ConcreteBullets
 {
 	[RequireComponent(typeof(Rigidbody2D))]
 	public class InvertBullet : BulletBase<InvertBullet.Data>

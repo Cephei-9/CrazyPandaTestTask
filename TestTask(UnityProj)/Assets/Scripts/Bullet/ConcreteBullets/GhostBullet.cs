@@ -6,7 +6,7 @@ using Time.Infrastructure;
 using Tools;
 using UnityEngine;
 
-namespace Bullet
+namespace Bullet.ConcreteBullets
 {
 	public class GhostBullet : BulletBase<BulletData>
 	{
