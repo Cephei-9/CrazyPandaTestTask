@@ -1,14 +1,20 @@
 using System;
+using TMPro;
+using Tools;
 using UnityEngine;
 using UnityEngine.UI;
 using Range = Tools.Range;
 
 namespace UI.Elements
 {
-	public class TimeScaleView : MonoBehaviour
+	public class TimeScaleView : MonoBehaviour, ITimeScaleView
 	{
 		[SerializeField]
 		private Slider Slider;
+		[SerializeField]
+		private TextMeshProUGUI MinText;
+		[SerializeField]
+		private TextMeshProUGUI MaxText;
 		
 		public float Value { get; private set; }
 		
@@ -24,13 +30,16 @@ namespace UI.Elements
 			Slider.minValue = range.Min;
 			Slider.maxValue = range.Max;
 
+			MinText.text = range.Min.ToString("0.#");
+			MaxText.text = range.Max.ToString("0.#");
+
 			SetTimeScaleValue(startValue);
 		}
 
 		public void ShowValue(float value)
 		{
-			Slider.interactable = false;
 			SetTimeScaleValue(value);
+			Slider.interactable = false;
 		}
 
 		public void ProvideInput()
@@ -46,6 +55,9 @@ namespace UI.Elements
 
 		private void OnValueChange(float newValue)
 		{
+			if(Value.IsEquals(newValue))
+				return;
+			
 			Value = newValue;
 			ChangeInputEvent?.Invoke(Value);
 		}

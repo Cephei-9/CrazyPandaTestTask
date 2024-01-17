@@ -8,6 +8,10 @@ using Zenject;
 
 namespace Installers
 {
+	// Controller connecting view objects with game logic. If the hud would contain more logic, it would be moved to
+	// sub-controllers, and the hud itself would get a factory of controllers and create them on opening and pass them
+	// sub-views that would be taken from the hud view.
+	
 	public class LevelInstaller : MonoInstaller<LevelInstaller>
 	{
 		public LevelContext LevelContext;
@@ -23,9 +27,9 @@ namespace Installers
 
 		private void BindUIControllers()
 		{
-			Container.Bind<HudController>().AsSingle();
-			
 			Container.BindInterfacesTo<UIControllersFactory>().AsSingle();
+			
+			Container.Bind<HudController>().AsTransient();
 		}
 		
 		private void BindLevelContext()

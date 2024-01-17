@@ -6,7 +6,7 @@ namespace Time
 {
 	public class MainTimeScaleManager
 	{
-		private readonly IWritableTimeProvider _mainTimeProvider;
+		private IWritableTimeProvider _mainTimeProvider;
 
 		public Range TimeRange { get; }
 		public float TimeScale => _mainTimeProvider.TimeScale;

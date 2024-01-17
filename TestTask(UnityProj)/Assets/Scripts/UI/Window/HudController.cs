@@ -20,17 +20,21 @@ namespace UI.Window
 			InitMainTimeView(hudView.MainTimeScaleView);
 			InitGunView(hudView.LeftGunPanelView, _gunsProvider.LeftGun);
 			InitGunView(hudView.RightGunPanelView, _gunsProvider.RightGun);
+			
+			hudView.Show();
 		}
 
 		private void InitGunView(GunPanelView gunView, Gun gun)
 		{
 			gunView.Init(gun.TimeScaleRange, gun.TimeScale, gun.StartBullet);
 			
-			gun.ChangeBulletEvent += gunView.ShowBullet;
+			gun.ChangeBulletEvent += gunView.SelectBullet;
+			gunView.ChangeBulletEvent += gun.ChangeBullet;
+			
 			gunView.UpdateTimeScaleValueEvent += gun.UpdateTimeScale;
 		}
 
-		private void InitMainTimeView(TimeScaleView timeScaleView)
+		private void InitMainTimeView(ITimeScaleView timeScaleView)
 		{
 			timeScaleView.Init(_mainTimeScaleManager.TimeRange, _mainTimeScaleManager.TimeScale);
 			timeScaleView.ChangeInputEvent += _mainTimeScaleManager.ChangeTimeScale;

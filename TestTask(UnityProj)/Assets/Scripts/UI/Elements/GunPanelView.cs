@@ -13,23 +13,20 @@ namespace UI.Elements
 		private BulletSelectorView BulletSelectorView;
 
 		public event Action<float> UpdateTimeScaleValueEvent;
+		public event Action<BulletType> ChangeBulletEvent;
 
 		public void Init(Range timeRange, float startTimeValue, BulletType startBulletType)
 		{
 			TimeScaleView.Init(timeRange, startTimeValue);
-			TimeScaleView.ChangeInputEvent += UpdateTimeScaleValue;
+			TimeScaleView.ChangeInputEvent += f => UpdateTimeScaleValueEvent?.Invoke(f);
 			
-			BulletSelectorView.ShowBullet(startBulletType);
+			BulletSelectorView.Init(startBulletType);
+			BulletSelectorView.ChangeBulletEvent += b => ChangeBulletEvent?.Invoke(b);
 		}
 
-		public void ShowBullet(BulletType bulletType)
+		public void SelectBullet(BulletType bulletType)
 		{
-			BulletSelectorView.ShowBullet(bulletType);
-		}
-
-		private void UpdateTimeScaleValue(float newValue)
-		{
-			UpdateTimeScaleValueEvent?.Invoke(newValue);
+			BulletSelectorView.SelectBullet(bulletType);
 		}
 	}
 }

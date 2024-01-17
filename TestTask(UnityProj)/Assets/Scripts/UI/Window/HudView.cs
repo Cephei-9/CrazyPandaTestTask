@@ -10,8 +10,18 @@ namespace UI.Window
 		[SerializeField]
 		private GunPanelView RightGunPanel, LeftGunPanel;
 		
-		public TimeScaleView MainTimeScaleView => TimeScaleView;
+		public ITimeScaleView MainTimeScaleView => TimeScaleView;
 		public GunPanelView RightGunPanelView => RightGunPanel;
 		public GunPanelView LeftGunPanelView => LeftGunPanel;
+
+		public void Show()
+		{
+			gameObject.SetActive(true);
+		}
+
+		public void Hide()
+		{
+			gameObject.SetActive(false);
+		}
 	}
 }

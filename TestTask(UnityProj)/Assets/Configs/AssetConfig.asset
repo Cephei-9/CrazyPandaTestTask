@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChronoAreaPrefab: {fileID: 458430107500999940, guid: 897dbde534e474e458966da0fce0aa47, type: 3}
   UIRootPrefab: {fileID: 823140098933179389, guid: eb9c2ebbbc28c434383fe9f4b8e9c0cd, type: 3}
-  HudViewPrefab: {fileID: 340244169360467462, guid: 4137988a282963848923d15e0ee06bb5, type: 3}
+  HudViewPrefab: {fileID: 8108127505164403752, guid: e4448a08352e132418eda8fb33315e8a, type: 3}
   SimpleBulletPrefab: {fileID: 1403525240, guid: 31e6b7528990221439e743efa4d331c0, type: 3}
   GhostBulletPrefab: {fileID: 306880747, guid: 66061512051802640a28834a1e36961b, type: 3}
   InvertBulletPrefab: {fileID: 1518860231, guid: 3d319005c24a086479eb25a4c97a020b, type: 3}

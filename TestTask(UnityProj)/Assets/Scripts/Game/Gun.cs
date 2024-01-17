@@ -47,7 +47,7 @@ namespace Game
 		private void Update()
 		{
 			if (_input.ChangeBullet)
-				ChangeBullet();
+				ChangeBulletToNext();
 			if (_input.Shoot)
 				Shoot();
 		}
@@ -55,6 +55,12 @@ namespace Game
 		public void UpdateTimeScale(float newTimeScale)
 		{
 			_timeProvider.ChangeTimeScale(newTimeScale);
+		}
+		
+		public void ChangeBullet(BulletType newBulletType)
+		{
+			_currentBulletType = newBulletType;
+			ChangeBulletEvent?.Invoke(_currentBulletType);
 		}
 
 		private void Shoot()
@@ -66,9 +72,10 @@ namespace Game
 			newBullet.Shoot(bulletVelocity, _timeProvider);
 		}
 
-		private void ChangeBullet()
+		private void ChangeBulletToNext()
 		{
 			_currentBulletType++;
+			
 			if (_currentBulletType == BulletType.Max)
 				_currentBulletType = 0;
 
